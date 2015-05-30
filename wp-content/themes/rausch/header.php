@@ -28,33 +28,16 @@
 
     <header class="global-header push-menu-right">
       <a href="/FS-REBOOT/wordpress" class="logotype"></a>
-
-      <?php
-        $defaults = array(
-          'theme_location'  => '',
-          'menu'            => 'main-menu',
-          'container'       => 'nav',
-          'container_class' => 'nav-primary',
-          'echo'            => true,
-          'fallback_cb'     => 'wp_page_menu',
-          'before'          => '',
-          'after'           => '',
-          'link_before'     => '',
-          'link_after'      => '',
-          'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-          'depth'           => 0,
-          'walker'          => ''
-        );
-
-        wp_nav_menu( $defaults );
-      ?>
-
-      <section class="subscribe">
-        <form action="index.html" method="post" class="subscribe-form">
-          <input type="email" name="email" class="subscribe-input" placeholder="Email address" autofocus>
-          <button type="submit" class="subscribe-submit">Subscribe</button>
-        </form>
-      </section>
+      
+      <nav class="nav-primary">
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">LED Technology</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
 
     </header>
 

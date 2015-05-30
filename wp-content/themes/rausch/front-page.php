@@ -1,12 +1,11 @@
-<?php
-  get_header();
-  //opcache_reset();
-?>
+<?php get_header(); ?>
 
-<?php get_template_part( 'partials/now', 'playing' ); ?>
-
-<?php get_template_part( 'partials/new', 'releases' ); ?>
-
-<?php get_template_part( 'partials/ongoing', 'series' ); ?>
+<artcile>
+  
+  <div class="responsive-container">
+    <iframe src="https://player.vimeo.com/video/126145768?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+  
+</artcile>
 
 <?php get_footer(); ?>
