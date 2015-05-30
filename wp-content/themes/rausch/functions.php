@@ -1,12 +1,12 @@
 <?php
 
 /**
- * filmscene functions and definitions
+ * rausch functions and definitions
  *
- * @package filmscene
+ * @package rausch
  */
 
-if ( ! function_exists( 'filmscene_setup' ) ) :
+if ( ! function_exists( 'rausch_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -14,191 +14,6 @@ if ( ! function_exists( 'filmscene_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-
- add_action('get_data','retrieve_agile_data');
-
-function retrieve_agile_data(){
-    $response = wp_remote_get( 'http://prod3.agileticketing.net/WebSales/feed.ashx?guid=22de01b4-eae0-4755-a8d4-6c879ee0cec5&showslist=true&withmedia=true' );
-    $content = trim( wp_remote_retrieve_body( $response ) );
-    $content = simplexml_load_string( $content, null, LIBXML_NOCDATA );
-    $films = $content->ArrayOfShows->Show;
-    $myfile = fopen("termsheet.txt", "w");
-    foreach($films as $film){
-        // sets up a query to check whether the films
-        // we're trying to add have already been created
-        $args = array(
-        'post_type' => 'film',
-        'meta_query' => array(
-           array(
-               'key' => 'agileid',
-               'value' => intval($film->ID)
-           )
-        ),
-        'fields' => 'ids'
-        );
-
-        $query = new WP_Query( $args );
-        $duplicates = $query->posts;
-
-        // if we've already created a film post for this film, update showings
-        if ( ! empty( $duplicates ) ) {
-            $showings = $film->CurrentShowings->Showing;
-            foreach($showings as $showing){
-                // sets up a query to check whether the showings
-                // we're trying to add have already been created
-                $showargs = array(
-                    'post_type' => 'showing',
-                    'meta_query' => array(
-                       array(
-                           'key' => 'showingid',
-                           'value' => intval($showing->ID)
-                       )
-                    ),
-                    'fields' => 'ids'
-                );
-
-                $showquery = new WP_Query( $showargs );
-                $showduplicates = $showquery->posts;
-
-                // if we've already created a showing post for this film, update showings
-                if ( ! empty( $showduplicates ) ) {
-
-                } else {
-                    $new_show = array(
-                        'post_title'    => (string)$film->Name,
-                        'post_type'     => 'showing',
-                        'post_status'   => 'publish'
-                    );
-                    $show_id = wp_insert_post($new_show, True);
-
-                    if ( is_wp_error($show_id) ){
-
-                    }
-                    else {
-                        update_post_meta($show_id, 'filmid', intval($film->ID), True);
-                        update_post_meta($show_id, 'showingid', intval($showing->ID), True);
-                        update_post_meta($show_id, 'startdate', (string)date('n/j/Y g:ia', strtotime($showing->StartDate)));
-                        update_post_meta($show_id, 'enddate', (string)date('n/j/Y g:ia', strtotime($showing->EndDate)));
-                        update_post_meta($show_id, 'buylink', (string)$showing->LegacyPurchaseLink);
-                    }
-                }
-            }
-        } else {
-            $agileID = $film->ID;
-            $name = $film->Name;
-            $desc = $film->ShortDescription;
-
-            $fixedname = ucwords(strtolower(preg_replace("/-\s[\p{L}\s]+/u", "", $name)));
-
-            $new_film = array(
-                'post_title'    => $fixedname,
-                'post_content'  => $desc,
-                'post_type'     => 'film',
-                'post_status'   => 'publish'
-            );
-            $post_id = wp_insert_post($new_film, True);
-
-            if ( is_wp_error($post_id) ){
-
-            }
-            else {
-                $custom_props = $film->CustomProperties->CustomProperty;
-                $directors = array();
-                $prod_countries = array();
-                $series = '';
-                foreach($custom_props as $cp){
-                    if($cp->Name == 'Director'){
-                        $directors[] = (string)$cp->Value;
-                    }
-                    if($cp->Name == 'Year Released'){
-                        $year_rel = intval($cp->Value);
-                    }
-                    if($cp->Name == 'Production Country'){
-                        $prod_countries[] = (string)$cp->Value;
-                    }
-                    if($cp->Name == 'Series'){
-                        $series = (string)$cp->Value;
-                    }
-                }
-
-                $medias = $film->AdditionalMedia->Media;
-                foreach($medias as $media){
-                    if($media->Type == 'YouTube'){
-                        $trailer = (string)$media->Value;
-                    }
-                }
-
-                if($series != '') {
-                    $term = term_exists($series, 'category');
-                    if ($term) {
-                        $add_cat = array(intval($term['term_id']));
-                        wp_set_object_terms($post_id, $add_cat, 'category');
-                    } else {
-                        $new_cat = wp_insert_term($series, 'category', array(
-                            'parent'=>7
-                        ));
-                        wp_set_object_terms($post_id, array($new_cat['term_id']), 'category');
-                    }
-                }
-                update_post_meta($post_id, 'agileid', intval($film->ID), True);
-                update_post_meta($post_id, 'thumb_image', (string)$film->ThumbImage);
-                update_post_meta($post_id, 'event_image', (string)$film->EventImage);
-                update_post_meta($post_id, 'infolink', (string)$film->InfoLink);
-                update_post_meta($post_id, 'director', implode(",", $directors));
-                update_post_meta($post_id, 'year_released', $year_rel);
-                update_post_meta($post_id, 'production_country', implode(",", $prod_countries));
-                update_post_meta($post_id, 'trailer', $trailer);
-
-                $showings = $film->CurrentShowings->Showing;
-                foreach($showings as $showing){
-                    // sets up a query to check whether the showings
-                    // we're trying to add have already been created
-                    $showargs = array(
-                        'post_type' => 'showing',
-                        'meta_query' => array(
-                           array(
-                               'key' => 'showingid',
-                               'value' => intval($showing->ID)
-                           )
-                        ),
-                        'fields' => 'ids'
-                    );
-
-                    $showquery = new WP_Query( $showargs );
-                    $showduplicates = $showquery->posts;
-
-                    // if we've already created a film post for this film, update showings
-                    if ( ! empty( $showduplicates ) ) {
-
-                    } else {
-                        $new_show = array(
-                            'post_title'    => (string)$film->Name,
-                            'post_type'     => 'showing',
-                            'post_status'   => 'publish'
-                        );
-                        $show_id = wp_insert_post($new_show, True);
-
-                        if ( is_wp_error($show_id) ){
-
-                        }
-                        else {
-                            update_post_meta($show_id, 'filmid', intval($film->ID), True);
-                            update_post_meta($show_id, 'showingid', intval($showing->ID), True);
-                            update_post_meta($show_id, 'startdate', (string)date('n/j/Y g:ia', strtotime($showing->StartDate)));
-                            update_post_meta($show_id, 'enddate', (string)date('n/j/Y g:ia', strtotime($showing->EndDate)));
-                            update_post_meta($show_id, 'buylink', (string)$showing->LegacyPurchaseLink);
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-    fclose($myfile);
-}
-
-do_action('get_data');
-
 
 add_action('init','film_post_type');
 
@@ -238,54 +53,6 @@ function showing_post_type(){
 
 }
 
-/*-------------------------------------------------------------------------------
-    Custom Columns
--------------------------------------------------------------------------------*/
-
-function my_page_columns($columns)
-{
-    $columns = array(
-        'cb'        => '<input type="checkbox" />',
-        'title'     => 'Title',
-        'startdate' =>  'Showtime',
-        'date'      =>  'Date',
-    );
-    return $columns;
-}
-
-function my_custom_columns($column)
-{
-    global $post;
-    if($column == 'startdate')
-    {
-        echo (get_field('startdate', $post->ID));
-    }
-}
-
-add_action("manage_posts_custom_column", "my_custom_columns");
-add_filter("manage_edit-showing_columns", "my_page_columns");
-
-function my_column_register_sortable( $columns )
-{
-    $columns['startdate'] = 'startdate';
-    return $columns;
-}
-
-add_filter("manage_edit-showing_sortable_columns", "my_column_register_sortable" );
-
-function event_date_column_orderby( $vars )
-{
-    if ( isset( $vars['orderby'] ) && 'startdate' == $vars['orderby'] ) {
-        $vars = array_merge( $vars, array(
-            'meta_key' => 'startdate',
-            'orderby' => 'meta_value date'
-        ) );
-    }
-
-    return $vars;
-}
-add_filter( 'request', 'event_date_column_orderby' );
-
 
 function sitewide_js() {
   wp_deregister_script('jquery');
@@ -299,15 +66,15 @@ function sitewide_js() {
 }
 add_action( 'wp_enqueue_scripts', 'sitewide_js');
 
-function filmscene_setup() {
+function rausch_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on filmscene, use a find and replace
-	 * to change 'filmscene' to the name of your theme in all the template files
+	 * If you're building a theme based on rausch, use a find and replace
+	 * to change 'rausch' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'filmscene', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'rausch', get_template_directory() . '/languages' );
 
     // Add the ability to add a Featured Image to a Special Event.
     add_theme_support( 'post-thumbnails' );
@@ -328,8 +95,8 @@ function filmscene_setup() {
 		'gallery',
 	) );
 }
-endif; // filmscene_setup
-add_action( 'after_setup_theme', 'filmscene_setup' );
+endif; // rausch_setup
+add_action( 'after_setup_theme', 'rausch_setup' );
 
 
 /**
