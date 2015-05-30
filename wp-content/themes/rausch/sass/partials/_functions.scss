@@ -1,0 +1,8 @@
+$base-size: 1rem;
+$scale: 1.333;
+
+@for $i from 1 through 50 {
+  h#{$i} {
+    font-size: $base-size*$scale;
+  }
+}
