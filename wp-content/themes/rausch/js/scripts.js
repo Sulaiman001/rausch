@@ -1,4 +1,11 @@
 jQuery(document).ready(function($){
+  
+$('body').flowtype({
+  minimum : 500,
+  maximum : 1600,
+  minFont : 12,
+  maxFont : 62
+}); 
 
 /*----- PARALLAX -----*/
 var $window = $(window);

@@ -13,13 +13,13 @@
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-    <title><?php wp_title( '|', true, 'right' ); ?>Film Scene</title>
+    <title><?php wp_title( '|', true, 'right' ); ?>Rausch Productions</title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>">
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
     <?php wp_head(); ?>
-    <script src="//use.typekit.net/dzw2wjm.js"></script>
+    <script src="//use.typekit.net/mhx0ocv.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   </head>

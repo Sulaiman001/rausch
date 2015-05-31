@@ -111,7 +111,7 @@ section {
   font-size: $h6;
   font-weight: 300;
   letter-spacing: 1px;
-  padding: $small - 0.2 $h6 $small;
+  padding: $base - 0.2 $h6 $base;
   position: relative;
   text-align: center;
   width: 100%;
@@ -135,7 +135,7 @@ section {
   font-size: $base;
   font-weight: 300;
   overflow: hidden;
-  padding: 4px $small;
+  padding: 4px $base;
   position: relative;
   z-index: 1;
   &:hover {
@@ -173,7 +173,7 @@ section {
   z-index: 99999;
 }
 
-.small-header {
+.base-header {
   height: $header-height - 10px;
   nav ul .nav-item a {
     @include respond-to(tablet) {
@@ -208,3 +208,18 @@ section {
   width: 70px; height: 40px;
 }
 
+/* =VIDEO INTRO
+----------------------------------------------- */
+.video-intro {
+  position: relative;
+  .intro-copy {
+    position: absolute;
+    bottom: 5rem; right: 5rem;
+    h1 {
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
+  }
+}

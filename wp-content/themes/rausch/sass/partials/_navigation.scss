@@ -110,18 +110,14 @@ body.pml-open main {
       a {
         @include transition(all, 0.2s, ease-in-out);
         @include respond-to(tablet) {
-          font-size: $h6;
           height: 100%;
           line-height: $header-height;
           padding: 0 1.5vw;
         }
-        @include respond-to(laptop) {
-          
-        }
         color: $white;
         display: block;
         font-family: $title-font;
-        font-size: $h6;
+        font-size: $base;
         font-weight: 700;
         line-height: 1.1;
         padding: $base 3rem;

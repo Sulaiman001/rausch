@@ -21,10 +21,6 @@
 }
 
 .slides-pagination {
-  @include respond-to(tablet) {
-    left: $h1+$h6; bottom: $h1;
-    width: auto;
-  }
   position: absolute;
   z-index: 3;
   bottom: 8rem;
