@@ -16,9 +16,6 @@ $columns: 12;
 @for $i from 1 through $columns {
   .col-#{$i}-#{$columns} {
     @extend %grid-column;
-    @include respond-to(tablet) {
-      width: 33%;
-    }
     @include respond-to(laptop) {
       width: percentage($i / $columns);
     }

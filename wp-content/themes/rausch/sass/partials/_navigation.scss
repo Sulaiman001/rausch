@@ -11,7 +11,7 @@ $button-size: 2.8rem;
 
 .lines-button {
   @include transition(all, 0.2s, ease);
-  @include respond-to(laptop) {
+  @include respond-to(tablet) {
     display: none;
   }
   display: inline-block;
@@ -87,21 +87,21 @@ body.pml-open main {
 .nav-primary {
   @include respond-to(tablet) {
     display: inline-block;
-    margin-left: $h5;
+    margin-left: $h4;
   }
   display: block;
   position: absolute;
   width: 100%; height: 100%;
   z-index: 99999;
   ul {
-    @include respond-to(laptop) {
+    @include respond-to(tablet) {
       margin-top: 0;
     }
     margin-top: 4rem;
     width: auto; height: auto;
     li {
       @include transition(all, 0.2s, ease-in-out);
-      @include respond-to(laptop) {
+      @include respond-to(tablet) {
         display: inline-block;
       }
       display: block;
@@ -110,6 +110,7 @@ body.pml-open main {
       a {
         @include transition(all, 0.2s, ease-in-out);
         @include respond-to(tablet) {
+          font-size: $base;
           height: 100%;
           line-height: $header-height;
           padding: 0 1.5vw;
@@ -117,10 +118,9 @@ body.pml-open main {
         color: $white;
         display: block;
         font-family: $title-font;
-        font-size: $base;
-        font-weight: 700;
+        font-size: $h2;
         line-height: 1.1;
-        padding: $base 3rem;
+        padding: 2rem 3rem;
         position: relative;
         text-align: center;
         text-transform: uppercase;

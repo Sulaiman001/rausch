@@ -36,20 +36,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* =GLOBALS
 ----------------------------------------------- */
-.responsive-container {
-  @extend %mask;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-.responsive-container iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-}
-
 main {
   @include transition(right, 0.2s, ease-in-out);
   position: relative;
@@ -108,10 +94,10 @@ section {
     width: auto;
   }
   color: $white;
-  font-size: $h6;
+  font-size: $h4;
   font-weight: 300;
   letter-spacing: 1px;
-  padding: $base - 0.2 $h6 $base;
+  padding: $base - 0.2 $h4 $base;
   position: relative;
   text-align: center;
   width: 100%;
@@ -161,11 +147,12 @@ section {
 ----------------------------------------------- */
 .global-header {
   @include transition(all, 0.2s, ease-in-out);
-  @include respond-to(laptop) {
+  @include respond-to(tablet) {
+    background-color: transparentize($black, 0.1);
     bottom: auto; left: 0; right: 0;
     height: $header-height;
   }
-  background-color: transparentize($black, 0.1);
+  background-color: $black;
   overflow: hidden;
   position: fixed;
   top: 0; right: -100%; bottom: 0;
@@ -194,6 +181,7 @@ section {
   @include respond-to(tablet) {
     display: inline-block;
     height: 100%;
+    top: auto;
   }
   background-image: url(img/logotype.svg);
   background-position: center;
@@ -201,25 +189,42 @@ section {
   background-size: 100% auto;
   display: block;
   line-height: $header-height;
-  margin-left: $h5;
+  margin-left: $h4;
   padding: 2.1328rem 3.78975rem;
   position: relative;
+  top: 1em;
   text-indent: -100%;
   width: 70px; height: 40px;
 }
 
 /* =VIDEO INTRO
 ----------------------------------------------- */
+.mask-container {
+  @extend %mask;
+}
+
+#bgvid {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  z-index: -100;
+}
+
 .video-intro {
   position: relative;
+  height: 100vh;
   .intro-copy {
     position: absolute;
     bottom: 5rem; right: 5rem;
     h1 {
       color: $white;
+      font-weight: 100;
     }
     p {
       color: $white;
+      font-size: $base;
+      font-weight: 300;
     }
   }
 }
