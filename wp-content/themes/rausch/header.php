@@ -18,7 +18,10 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>">
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
-    <?php wp_head(); ?>
+    <?php
+    wp_head();
+    opcache_reset();
+    ?>
     <script src="//use.typekit.net/mhx0ocv.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -27,8 +30,8 @@
   <body>
 
     <header class="global-header push-menu-right">
-      <a href="/FS-REBOOT/wordpress" class="logotype"></a>
-      
+      <a href="/Rausch/" class="logotype"></a>
+
       <nav class="nav-primary">
         <ul>
           <li><a href="#">Portfolio</a></li>
