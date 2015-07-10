@@ -7,8 +7,8 @@ $('body').flowtype({
   minFont : 16,
   maxFont : 62,
   fontRatio : 60
-}); 
-  
+});
+
 /*----- DESKTOP VIDEO AUTOPLAY -----*/
 
 $(function() {
@@ -18,7 +18,7 @@ $(function() {
       $('#bgvid').css('display','block');
     }
 
-    // If you want to autoplay when the window resized wider than 780px 
+    // If you want to autoplay when the window resized wider than 780px
     // after load, you can add this:
 
     $(window).resize(function() {
@@ -38,7 +38,7 @@ $('[data-type="background"]').each(function(){
     $bgobj.css('background-image', 'url(' + $bgobj.data('background') + ')');
 
      $(window).scroll(function() {
-         var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+         var yPos = -($(window).scrollTop() / $bgobj.data('speed'));
 
          // Put together our final background position
          var coords = '50% '+ yPos + 'px';
@@ -243,6 +243,27 @@ $('a[href*=#]:not([href=#])').click(function() {
             return false;
         }
     }
+});
+
+/*----- IMAGE BACKGROUND AUTOMATION/PARALLAX -----*/
+
+var $window = $(window);
+
+$('[data-type="background"]').each(function(){
+    var $bgobj = $(this); // assigning the object
+
+    $bgobj.css('background-image', 'url(' + $bgobj.data('background') + ')');
+    $bgobj.children('.centerpiece').css('background', 'rgba(0,0,0,0.5)');
+
+    $(window).scroll(function() {
+       var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+
+       // Put together our final background position
+       var coords = '50% '+ yPos + 'px';
+
+       // Move the background
+       $bgobj.css({ backgroundPosition: coords });
+    });
 });
 
 

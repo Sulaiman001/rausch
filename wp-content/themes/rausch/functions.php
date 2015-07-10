@@ -15,43 +15,24 @@ if ( ! function_exists( 'rausch_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 
-add_action('init','film_post_type');
+// add_action('init','film_post_type');
 
-function film_post_type(){
+// function film_post_type(){
 
-    register_post_type('film',array(
-        'labels' => array(
-            'name' => __('Films'),
-            'singular_name' => __('Film')
-            ),
-        'taxonomies' => array('category'),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_nav_menus' => true,
-        'has_archive' => true
-        ));
+//     register_post_type('film',array(
+//         'labels' => array(
+//             'name' => __('Films'),
+//             'singular_name' => __('Film')
+//             ),
+//         'taxonomies' => array('category'),
+//         'public' => true,
+//         'show_ui' => true,
+//         'show_in_menu' => true,
+//         'show_in_nav_menus' => true,
+//         'has_archive' => true
+//         ));
 
-}
-
-add_action('init','showing_post_type');
-
-function showing_post_type(){
-
-    register_post_type('showing',array(
-        'labels' => array(
-            'name' => __('Showings'),
-            'singular_name' => __('Showing')
-            ),
-        'taxonomies' => array('category'),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_nav_menus' => true,
-        'has_archive' => true
-        ));
-
-}
+// }
 
 
 function sitewide_js() {

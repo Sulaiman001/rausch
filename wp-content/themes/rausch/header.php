@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
     <?php
     wp_head();
-    opcache_reset();
+    global $post;
     ?>
     <script src="//use.typekit.net/mhx0ocv.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
@@ -30,17 +30,117 @@
   <body>
 
     <header class="global-header push-menu-right">
-      <a href="/Rausch/" class="logotype"></a>
+      <a href="/rausch/" class="logotype"></a>
 
       <nav class="nav-primary">
-        <ul>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">LED Technology</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <?php
+          $defaults = array(
+            'theme_location'  => '',
+            'menu'            => 'main-menu',
+            'container'       => false,
+            'container_class' => '',
+            'menu_class'      => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+          );
+
+          wp_nav_menu( $defaults );
+        ?>
       </nav>
+
+      <?php
+        if(is_page('Work') || $post->post_parent == 5) {
+      ?>
+      <nav class="nav-secondary">
+        <?php
+          $defaults = array(
+            'theme_location'  => '',
+            'menu'            => 'work-menu',
+            'container'       => false,
+            'container_class' => '',
+            'menu_class'      => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+          );
+
+          wp_nav_menu( $defaults );
+        ?>
+      </nav>
+      <?php
+        }
+      ?>
+
+      <?php
+        if(is_page('Services') || $post->post_parent == 7) {
+      ?>
+      <nav class="nav-secondary">
+        <?php
+          $defaults = array(
+            'theme_location'  => '',
+            'menu'            => 'service-menu',
+            'container'       => false,
+            'container_class' => '',
+            'menu_class'      => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+          );
+
+          wp_nav_menu( $defaults );
+        ?>
+      </nav>
+      <?php
+        }
+      ?>
+
+      <?php
+        if(is_page('LED Technology') || $post->post_parent == 9) {
+      ?>
+      <nav class="nav-secondary">
+        <?php
+          $defaults = array(
+            'theme_location'  => '',
+            'menu'            => 'led-menu',
+            'container'       => false,
+            'container_class' => '',
+            'menu_class'      => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+          );
+
+          wp_nav_menu( $defaults );
+        ?>
+      </nav>
+      <?php
+        }
+      ?>
 
     </header>
 

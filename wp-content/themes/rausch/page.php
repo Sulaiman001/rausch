@@ -5,12 +5,12 @@
   <?php if ( have_posts() ) : ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
-          
-      <?php 
 
-        $image = get_field('image');
+      <?php
 
-        if( !empty($image) ): 
+        //$image = get_field('image');
+
+        if( !empty($image) ):
 
         // vars
         $url = $image['url'];
@@ -25,7 +25,7 @@
         $height = $image['sizes'][ $size . '-height' ];
 
         ?>
-           
+
     <article class="intro-image" data-type="background" data-speed="6" style="background-image: url(<?php echo $url; ?>);">
 
         <?php if( $caption ): ?>
@@ -44,19 +44,19 @@
             <?php endif; ?>
 
         <?php endif; ?>
-            
+
     </article>
-           
+
     <article>
-     
+
       <section class="col-6-12 no-float">
-      
+
         <?php the_content(); ?>
-      
+
       </section>
-      
+
     </article>
-            
+
     <?php endwhile; ?>
 
 

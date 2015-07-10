@@ -55,10 +55,10 @@ $button-size: 2.8rem;
 
 .lines-button.close .lines {
   /*hide the middle line*/
-  
+
   background: transparent;
   /*overlay the lines by setting both their top values to 0*/
-  
+
   &::before, &::after {
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
@@ -125,6 +125,60 @@ body.pml-open main {
         text-align: center;
         text-transform: uppercase;
         &:hover { background-color: $dark-blue; }
+      }
+    }
+  }
+}
+
+/* SECONDARY NAV */
+
+.nav-secondary {
+  @include respond-to(tablet) {
+    display: inline-block;
+    background-color: transparentize($dark-blue, 0.1);
+    padding-left: 6.25em;
+    left: 0;
+  }
+  background-color: $dark-blue;
+  display: block;
+  position: absolute;
+  width: 100%; height: 40px;
+  top: 80px;
+  z-index: 99999;
+  padding-left: 6.25em;
+  left: 0;
+  ul {
+    @include respond-to(tablet) {
+      margin-top: 0;
+    }
+    margin-top: 4rem;
+    width: auto; height: auto;
+    li {
+      @include transition(all, 0.2s, ease-in-out);
+      @include respond-to(tablet) {
+        display: inline-block;
+      }
+      display: block;
+      position: relative;
+      text-align: left;
+      a {
+        @include transition(all, 0.2s, ease-in-out);
+        @include respond-to(tablet) {
+          font-size: .8em;
+          height: 100%;
+          line-height: 40px;
+          padding: 0 1.5vw;
+        }
+        color: $white;
+        display: block;
+        font-family: $title-font;
+        font-size: $h2;
+        line-height: 1.1;
+        padding: 2rem 3rem;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        &:hover { background-color: $azure; }
       }
     }
   }
