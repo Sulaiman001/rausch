@@ -310,6 +310,21 @@ section {
   }
 }
 
+.list {
+  height: auto;
+  @extend %grid-list;
+  .centerpiece {
+    @extend %centerpiece;
+  }
+  h3 {
+    font-weight: 100;
+  }
+  button {
+    @extend %button;
+    margin-top: 4rem;
+  }
+}
+
 
 /* =HOMEPAGE
 ----------------------------------------------- */
@@ -540,17 +555,6 @@ section {
   }
   button {
     @extend %button;
-  }
-}
-
-.list {
-  height: auto;
-  @extend %grid-list;
-  .centerpiece {
-    @extend %centerpiece;
-  }
-  h3 {
-    font-weight: 100;
   }
 }
 
