@@ -47,11 +47,10 @@ main {
 article {
   margin: 0 auto;
   overflow: hidden;
+  padding: $h2;
   position: relative;
   text-align: left;
-  width: 100%;
-  height: 100vh;
-  padding: 5rem 10rem;
+  width: 100%; height: 100%;
 }
 
 section {
@@ -118,28 +117,34 @@ section {
 }
 
 %centerpiece {
+  @include respond-to(tablet) {
+    width: 80%;
+  }
   position: relative;
   text-align: center;
-  width: 80%;
+  width: 100%;
   color: $white;
   height: auto;
-  margin: 0 10% 0;
-  padding: 2rem;
-  h1 {
-    font-weight: 100;
-  }
+  margin: 0 auto;
   p {
-    margin-top: 3rem;
+    padding: $base 0;
   }
 }
 
 %halfpiece {
+  @include respond-to(tablet) {
+    float: left;
+    padding: $h4;
+    width: 50%;
+  }
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 100%;
   color: $white;
   height: auto;
-  float: left;
+  p {
+    padding: $base 0;
+  }
 }
 
 %grid-list {
@@ -198,6 +203,28 @@ section {
   }
 }
 
+%blockquote {
+  @include respond-to(laptop) {
+    padding: $h5 $h3;
+  }
+  font-weight: 100;
+  padding: $small;
+  &::before {
+    content: '\201C';
+    font-size: 275%;
+    position: absolute;
+    top: 0; left: -5px;
+    width: auto; height: auto;
+  }
+  &::after {
+    content: '\201D';
+    font-size: 275%;
+    position: absolute;
+    top: 0; right: -5px;
+    width: auto; height: auto;
+  }
+}
+
 %button {
   @include transition(all, 0.2s, ease-in-out);
   background: transparent;
@@ -209,12 +236,12 @@ section {
   font-weight: 300;
   font-family: $title-font;
   overflow: hidden;
-  padding: 4px $base;
+  padding: $small $base;
   position: relative;
   z-index: 1;
   &:hover {
     background: $seafoam;
-    color: $text-black;
+    color: $white;
   }
 }
 
@@ -314,23 +341,28 @@ section {
 }
 
 .video-intro {
+  padding: $h2;
   position: relative;
   height: 100vh;
   .intro-copy {
+    @include respond-to(tablet) {
+      left: 5rem;
+      width: 50%;
+    }
+    padding: $h2;
     position: absolute;
-    bottom: 10rem; right: 5rem;
+    bottom: $h4; left: 0;
     // position: relative;
     // margin: 0px auto;
     // display: block;
     // float: none;
+    width: 100%;
     h1 {
       color: $white;
-      font-weight: 100;
     }
     p {
       color: $white;
-      font-size: $base;
-      font-weight: 300;
+      padding: $base 0;
     }
     button {
       @extend %button;
@@ -343,30 +375,23 @@ section {
 }
 
 .service-portal {
-  padding: 0;
   position: relative;
-  height: 100vh;
   background-size: cover;
   h1 {
     color: $white;
-    font-weight: 100;
   }
   p {
     color: $white;
-    font-size: $base;
-    font-weight: 300;
   }
   button {
     @extend %button;
   }
   .centerpiece {
     @extend %centerpiece;
-    margin-top: 10rem;
   }
   .halfpiece {
     @extend %halfpiece;
     margin-top: 3rem;
-    padding: 0 10rem;
   }
 }
 
@@ -374,14 +399,15 @@ section {
   @extend %grid-list;
   .centerpiece {
     @extend %centerpiece;
-    h1 {
-      text-transform: none;
+    .blockquote {
+      @extend %blockquote;
+      @include respond-to(laptop) {
+        line-height: 1.2;
+      }
+      line-height: 1.4;
     }
     p {
       margin: 0;
-    }
-    p:first-of-type {
-      margin-top: 2rem;
     }
     p:last-of-type {
       margin-bottom: 2rem;
@@ -401,12 +427,9 @@ section {
   background-size: cover;
   h1 {
     color: $white;
-    font-weight: 100;
   }
   p {
     color: $white;
-    font-size: $base;
-    font-weight: 300;
   }
   button {
     @extend %button;
