@@ -1,14 +1,25 @@
 /* COLORS */
-$black: #231f20;
 $text-black: rgba(0,0,0,0.8);
 $mask-black: hsla(345, 6%, 13%, 0.6);
 $white: rgba(255,255,255,1.0);
-$gray: #6d6e71;
-$light-blue: #0062b3;
-$dark-blue: #004a87;
+
+/* PRIMARY COLOR PALETTE */
+$black: #071B24;
+$purple: #022036;
+$dark-blue: #0C2F4F;
+$weird-gray: #264242;
+$azure: #0A5B70;
+
+/* SECONDARY COLOR PALETTE */
+$sky-blue: #0099FF;
+$middle-blue: #0060A8;
+$seafoam: #00CF88;
+$gray: #89898C;
+$lime-green: #00FF59;
+
+
 $magenta: hsla(328, 67%, 37%, 1.0);
 $red: hsla(358, 80%, 52%, 1.0);
-$green: hsla(156, 50%, 43%, 1.0);
 
 /* FONTS */
 $title-font: "prenton-condensed", serif;

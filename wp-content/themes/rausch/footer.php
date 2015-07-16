@@ -12,5 +12,12 @@
         disableCrossDomain: 'true' // either 'true' or 'false' to not parse external CSS files.
     });
 </script>
+<article class="closing-statement">
+    <section class="centerpiece">
+        <h2>Ready to build your experience?</h2>
+        <a href="/rausch/contact"><button>Let's Do It</button></a>
+        <h4>&copy; Rausch Productions 2015</h4>
+    </section>
+</article>
 </body>
 </html>
