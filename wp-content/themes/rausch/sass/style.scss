@@ -47,11 +47,10 @@ main {
 article {
   margin: 0 auto;
   overflow: hidden;
+  padding: $h4;
   position: relative;
   text-align: left;
-  width: 100%;
-  height: 100vh;
-  padding: 5rem 10rem;
+  width: 100%; height: 100%;
 }
 
 section {
@@ -134,12 +133,15 @@ section {
 }
 
 %halfpiece {
+  @include respond-to(tablet) {
+    float: left;
+    width: 50%;
+  }
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 100%;
   color: $white;
   height: auto;
-  float: left;
 }
 
 %grid-list {
@@ -328,9 +330,7 @@ section {
 }
 
 .service-portal {
-  padding: 0;
   position: relative;
-  height: 100vh;
   background-size: cover;
   h1 {
     color: $white;
@@ -346,12 +346,10 @@ section {
   }
   .centerpiece {
     @extend %centerpiece;
-    margin-top: 10rem;
   }
   .halfpiece {
     @extend %halfpiece;
     margin-top: 3rem;
-    padding: 0 10rem;
   }
 }
 
