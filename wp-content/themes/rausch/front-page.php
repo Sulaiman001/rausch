@@ -10,8 +10,8 @@
     </video>
   </div>
 
-  <section class="intro-copy col-5-12">
-    <h1>Award-winning, multimedia production company</h1>
+  <section class="centerpiece intro-copy col-5-12">
+    <h1>Award-winning multimedia production company</h1>
     <p>Rausch Productions provides you with the techniques and tools to educate, entertain and engage your audience. We employ the latest audiovisual technology to build that connection, whether it’s a web video directed at new clients, presenting sales goals to your staff of 50, or putting on a concert for 3000 of your biggest fans.</p>
     <button>Learn More</button>
   </section>
@@ -41,7 +41,7 @@
 <article class="testimonial" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
     <section class="centerpiece">
         <h1>"This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed."</h1>
-        <p>- Sarah</p>
+        <p>-Sarah</p>
         <p>Event Coordinator, Ashford University</p>
         <button>View Client List</button>
     </section>

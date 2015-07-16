@@ -271,6 +271,18 @@ section {
   width: 70px; height: 40px;
 }
 
+.trifecta {
+  background: $purple;
+  height: auto;
+  padding: 5rem 10rem;
+  .centerpiece {
+    @extend %centerpiece;
+  }
+  .featured {
+    @extend %trifecta;
+  }
+}
+
 
 /* =HOMEPAGE
 ----------------------------------------------- */
@@ -292,6 +304,10 @@ section {
   .intro-copy {
     position: absolute;
     bottom: 10rem; right: 5rem;
+    // position: relative;
+    // margin: 0px auto;
+    // display: block;
+    // float: none;
     h1 {
       color: $white;
       font-weight: 100;
@@ -305,6 +321,10 @@ section {
       @extend %button;
     }
   }
+  // .centerpiece {
+  //   @extend %centerpiece;
+  //   margin-top: 25rem;
+  // }
 }
 
 .service-portal {
@@ -339,6 +359,21 @@ section {
   @extend %grid-list;
   .centerpiece {
     @extend %centerpiece;
+    h1 {
+      text-transform: none;
+    }
+    p {
+      margin: 0;
+    }
+    p:first-of-type {
+      margin-top: 2rem;
+    }
+    p:last-of-type {
+      margin-bottom: 2rem;
+    }
+    button {
+      margin-bottom: 2rem;
+    }
   }
 }
 
@@ -383,6 +418,7 @@ section {
       margin: 0 auto;
       position: relative;
       display: block;
+      top: 70%;
     }
   }
 }
@@ -392,6 +428,41 @@ section {
   @extend %grid-list;
   .centerpiece {
     @extend %centerpiece;
+  }
+}
+
+.case-studies {
+  height: auto;
+  section {
+    height: auto;
+    margin: 5rem 0;
+    .case-info {
+      width: 50%;
+      display: inline-block;
+      color: $white;
+      position:relative;
+      h2 {
+      text-align: center;
+      margin: 1rem 0 2rem;
+      }
+      p {
+        padding-left: 4rem;
+      }
+    }
+    video {
+      position: relative;
+      width: 45%;
+      display: inline-block;
+      margin-left: 5rem;
+      background: #000;
+      top: 1rem;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -426,7 +497,7 @@ section {
       border-radius: 100px;
       background: $azure;
       height: 180px;
-      width: 60%;
+      width: 180px;
       padding: 7rem 0rem;
       margin: 0 auto 2rem;
       &::after {
@@ -446,6 +517,17 @@ section {
   }
   button {
     @extend %button;
+  }
+}
+
+.list {
+  height: auto;
+  @extend %grid-list;
+  .centerpiece {
+    @extend %centerpiece;
+  }
+  h3 {
+    font-weight: 100;
   }
 }
 
@@ -481,28 +563,16 @@ section {
     @extend %grid-elem;
     width: calc(50% - 2rem);
     h2 {
-      background: transparentize($black, 0.2);
-      width: 60%;
+      background: transparentize($black, .2);
       margin: 0 auto;
       position: relative;
       display: block;
+      top: 70%;
     }
   }
   .benefit {
     @extend %trifecta;
     margin-top: 5rem;
-  }
-}
-
-.why-rausch {
-  background: $purple;
-  height: auto;
-  padding: 0 10rem;
-  .centerpiece {
-    @extend %centerpiece;
-  }
-  .featured {
-    @extend %trifecta;
   }
 }
 
