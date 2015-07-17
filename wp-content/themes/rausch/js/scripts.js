@@ -244,7 +244,6 @@ $('[data-type="background"]').each(function(){
     var $bgobj = $(this); // assigning the object
 
     $bgobj.css('background-image', 'url(' + $bgobj.data('background') + ')');
-    $bgobj.children('.centerpiece').css('background', 'rgba(0,0,0,0.5)');
 
     $(window).scroll(function() {
        var yPos = -($window.scrollTop() / $bgobj.data('speed'));
