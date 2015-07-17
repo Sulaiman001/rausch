@@ -1,14 +1,5 @@
 jQuery(document).ready(function($){
 
-/*----- FLOWTYPE -----*/
-$('body').flowtype({
-  minimum : 500,
-  maximum : 1920,
-  minFont : 16,
-  maxFont : 62,
-  fontRatio : 60
-});
-
 /*----- DESKTOP VIDEO AUTOPLAY -----*/
 
 $(function() {

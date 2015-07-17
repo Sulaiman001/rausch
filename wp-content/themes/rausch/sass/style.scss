@@ -534,14 +534,19 @@ section {
     h2 {
       border-radius: 100px;
       background: $azure;
-      height: 180px;
-      width: 180px;
-      padding: 7rem 0rem;
-      margin: 0 auto 2rem;
+      height: 200px;
+      width: 200px;
+      margin: 0px auto 2rem;
+      padding: 4.5rem 0 0;
+      position: relative;
+      display: inline-block;
+      font-size: 24pt;
       &::after {
         content: ">";
         position: absolute;
-        right: 0;
+        left: 15rem;
+        font-size: 44pt;
+        line-height: 24pt;
         color: $lime-green;
       }
     }
