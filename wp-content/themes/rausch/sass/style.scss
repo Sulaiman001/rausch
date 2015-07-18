@@ -296,7 +296,7 @@ section {
   display: block;
   line-height: $header-height;
   margin-left: $h4;
-  padding: 2.1328rem 3.78975rem;
+  padding: 2.133rem 2.79rem;
   position: relative;
   top: 1em;
   text-indent: -100%;
@@ -621,6 +621,7 @@ section {
 /* TEAM
 ----------------------------------------------- */
 
+
 .team-head {
   height: 100vh;
   background-size:cover;
@@ -663,12 +664,13 @@ section {
 .closing-statement {
   height: auto;
   background: $azure;
+  padding:0;
   h2, h4 {
-    margin-top: 3rem;
+    margin: 1rem 0;
     font-weight: 100;
   }
   button {
-    margin-top: 4rem;
+    margin: 1rem 0;
     @extend %button;
   }
   .centerpiece {
