@@ -16,21 +16,27 @@
             <h2>Rockwell Collins</h2>
             <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
         </div>
-        <video></video>
+        <video muted>
+            <source src="<?php bloginfo('template_directory'); ?>/img/newvid.mp4" type="video/mp4">
+        </video>
     </section>
     <section>
         <div class="case-info">
             <h2>Rockwell Collins</h2>
             <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
         </div>
-        <video></video>
+        <video muted>
+            <source src="<?php bloginfo('template_directory'); ?>/img/newvid.mp4" type="video/mp4">
+        </video>
     </section>
     <section>
         <div class="case-info">
             <h2>Rockwell Collins</h2>
             <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
         </div>
-        <video></video>
+        <video muted>
+            <source src="<?php bloginfo('template_directory'); ?>/img/newvid.mp4" type="video/mp4">
+        </video>
     </section>
 </article>
 <?php get_footer(); ?>

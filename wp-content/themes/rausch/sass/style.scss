@@ -485,7 +485,7 @@ section {
     height: auto;
     margin: 5rem 0;
     .case-info {
-      width: 50%;
+      width: 45%;
       display: inline-block;
       color: $white;
       position:relative;
@@ -499,9 +499,9 @@ section {
     }
     video {
       position: relative;
-      width: 45%;
+      width: 50%;
       display: inline-block;
-      margin-left: 5rem;
+      margin-left: 2rem;
       background: #000;
       top: 1rem;
     }
@@ -518,6 +518,7 @@ section {
 ----------------------------------------------- */
 
 .service-head {
+  height: 100vh;
   background-size:cover;
   p {
     color: $white;
@@ -663,7 +664,7 @@ section {
 
 .closing-statement {
   height: auto;
-  background: $azure;
+  background: $weird-gray;
   padding:0;
   h2, h4 {
     margin: 1rem 0;

@@ -1,11 +1,11 @@
 jQuery(document).ready(function($){
 
-/*----- DESKTOP VIDEO AUTOPLAY -----*/
+/*----- HOMEPAGE VIDEO AUTOPLAY -----*/
 
 $(function() {
     // onload
     if(document.body.clientWidth >= 870) {
-        $('video').attr('autoplay', true);
+        $('#bgvid').attr('autoplay', true);
       $('#bgvid').css('display','block');
     }
 
@@ -14,10 +14,55 @@ $(function() {
 
     $(window).resize(function() {
         if(document.body.clientWidth >= 870) {
-            $('video').attr('autoplay', true);
+            //$('video').attr('autoplay', true);
         }
     });
 });
+
+
+/*----- WORK SUB-PAGE AUTOPLAY-ON-SCROLL THAT I STOLE -----*/
+
+var $vidArray = [];
+$('video').each(function() {
+  console.log($(this)[0]);
+  $vidArray.push($(this)[0]);
+});
+var videos = document.getElementsByTagName("video"), fraction = 0.8;
+console.log($vidArray);
+function checkScroll() {
+
+  for(var i = 0; i < videos.length; i++) {
+
+    var video = videos[i];
+
+    var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
+        b = y + h, //bottom
+        visibleX, visibleY, visible, parent;
+
+    parent = video;
+    while (parent && parent !== document.body) {
+        x += parent.offsetLeft;
+        y += parent.offsetTop;
+        parent = parent.offsetParent;
+    }
+    visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+    visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+
+    visible = visibleX * visibleY / (w * h);
+
+    console.log('Video ' + $vidArray.indexOf(video) + ': ' + visible + '/' + fraction);
+    if (visible > fraction) {
+        video.play();
+    } else {
+        video.pause();
+    }
+    //console.log(video);
+  }
+}
+
+window.addEventListener('scroll', checkScroll, false);
+window.addEventListener('resize', checkScroll, false);
+
 
 /*----- PARALLAX -----*/
 var $window = $(window);
