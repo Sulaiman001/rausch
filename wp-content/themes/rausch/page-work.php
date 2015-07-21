@@ -26,7 +26,6 @@
           <h2 class="project-title">Ashford University</h2>
         </a>
       </figure>
-
     </section>
     
     <section class="col-4-12">
