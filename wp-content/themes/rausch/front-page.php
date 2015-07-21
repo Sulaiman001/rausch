@@ -8,7 +8,7 @@
     </video>
   </div>
 
-  <section class="centerpiece intro-copy col-5-12">
+  <section class="halfpiece intro-copy col-5-12">
     <h1>Award-winning multimedia production company</h1>
     <p>Rausch Productions provides you with the techniques and tools to educate, entertain and engage your audience. We employ the latest audiovisual technology to build that connection, whether it’s a web video directed at new clients, presenting sales goals to your staff of 50, or putting on a concert for 3000 of your biggest fans.</p>
     <button>Learn More</button>
@@ -19,7 +19,7 @@
 <article class="service-portal">
 
   <section class="centerpiece">
-      <h1>We Build The Experience From Start To Finish</h1>
+      <h2>We Build The Experience From Start To Finish</h2>
       <p>RP was conceived fifteen years ago in a single attic office, piecing together partnerships through productions based on trusted relationships. Founder and President, Ron Rausch, start the company with one thing in mind;  to provide his clients with a full- service multimedia video production solution. While the industry continues to evolve, we thrive to build relationships and provide our clients with a full-service experience to enable them to do the same for their guests.</p>
       <a href="/rausch/work"><button>View Our Work</button></a>
   </section>
