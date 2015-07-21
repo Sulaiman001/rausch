@@ -19,49 +19,23 @@ $(function() {
     });
 });
 
+// var player = new playerjs.Player('iframe');
 
-/*----- WORK SUB-PAGE AUTOPLAY-ON-SCROLL THAT I STOLE -----*/
+// player.on('ready', function(){
+//   player.on('play', function(){
+//     console.log('play');
+//   });
 
-var $vidArray = [];
-$('video').each(function() {
-  console.log($(this)[0]);
-  $vidArray.push($(this)[0]);
-});
-var videos = document.getElementsByTagName("video"), fraction = 0.8;
-console.log($vidArray);
-function checkScroll() {
+//   player.getDuration(function(duration){
+//     console.log(duration);
+//   });
 
-  for(var i = 0; i < videos.length; i++) {
+//   if (player.supports('method', 'mute')){
+//     player.mute();
+//   }
 
-    var video = videos[i];
-
-    var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
-        b = y + h, //bottom
-        visibleX, visibleY, visible, parent;
-
-    parent = video;
-    while (parent && parent !== document.body) {
-        x += parent.offsetLeft;
-        y += parent.offsetTop;
-        parent = parent.offsetParent;
-    }
-    visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
-    visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
-
-    visible = visibleX * visibleY / (w * h);
-
-    console.log('Video ' + $vidArray.indexOf(video) + ': ' + visible + '/' + fraction);
-    if (visible > fraction) {
-        video.play();
-    } else {
-        video.pause();
-    }
-    //console.log(video);
-  }
-}
-
-window.addEventListener('scroll', checkScroll, false);
-window.addEventListener('resize', checkScroll, false);
+//   player.play();
+// });
 
 
 /*----- PARALLAX -----*/

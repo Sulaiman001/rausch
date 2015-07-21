@@ -19,5 +19,6 @@
         <h4>&copy; Rausch Productions 2015</h4>
     </section>
 </article>
+<script type="text/javascript" src="//cdn.embed.ly/player-0.0.10.min.js"></script>
 </body>
 </html>
