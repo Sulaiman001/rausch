@@ -296,7 +296,7 @@ section {
   display: block;
   line-height: $header-height;
   margin-left: $h4;
-  padding: 2.1328rem 3.78975rem;
+  padding: 2.133rem 2.79rem;
   position: relative;
   top: 1em;
   text-indent: -100%;
@@ -485,7 +485,7 @@ section {
     height: auto;
     margin: 5rem 0;
     .case-info {
-      width: 50%;
+      width: 45%;
       display: inline-block;
       color: $white;
       position:relative;
@@ -499,9 +499,9 @@ section {
     }
     video {
       position: relative;
-      width: 45%;
+      width: 50%;
       display: inline-block;
-      margin-left: 5rem;
+      margin-left: 2rem;
       background: #000;
       top: 1rem;
     }
@@ -518,6 +518,7 @@ section {
 ----------------------------------------------- */
 
 .service-head {
+  height: 100vh;
   background-size:cover;
   p {
     color: $white;
@@ -621,6 +622,7 @@ section {
 /* TEAM
 ----------------------------------------------- */
 
+
 .team-head {
   height: 100vh;
   background-size:cover;
@@ -662,13 +664,14 @@ section {
 
 .closing-statement {
   height: auto;
-  background: $azure;
+  background: $weird-gray;
+  padding:0;
   h2, h4 {
-    margin-top: 3rem;
+    margin: 1rem 0;
     font-weight: 100;
   }
   button {
-    margin-top: 4rem;
+    margin: 1rem 0;
     @extend %button;
   }
   .centerpiece {

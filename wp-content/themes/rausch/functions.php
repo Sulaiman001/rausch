@@ -41,9 +41,11 @@ function sitewide_js() {
   wp_register_script( 'main', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0.0', false );
   wp_register_script( 'slider', get_template_directory_uri() . '/js/superslides.js', array( 'jquery' ), '1.0.0', false );
   wp_register_script( 'object-fit', get_template_directory_uri() . '/js/polyfill.object-fit.min.js', array( 'jquery' ), '1.0.0', false );
+  wp_register_script( 'is-in-viewport', get_template_directory_uri() . '/js/isInViewport.min.js', array( 'jquery' ), '1.0.0', false );
   wp_enqueue_script( 'main' );
   wp_enqueue_script( 'slider' );
   wp_enqueue_script( 'object-fit' );
+  wp_enqueue_script( 'is-in-viewport' );
 }
 add_action( 'wp_enqueue_scripts', 'sitewide_js');
 
@@ -92,31 +94,31 @@ require get_template_directory() . '/inc/template-tags.php';
 
 
 /** Admin Menu **/
-function change_post_menu_label() {
-    global $menu;
-    global $submenu;
-    $menu[5][0] = 'Blog';
-    $submenu['edit.php'][5][0] = 'News & Updates';
-    $submenu['edit.php'][10][0] = 'Post an Update';
-    echo '';
-}
+// function change_post_menu_label() {
+//     global $menu;
+//     global $submenu;
+//     $menu[5][0] = 'Blog';
+//     $submenu['edit.php'][5][0] = 'News & Updates';
+//     $submenu['edit.php'][10][0] = 'Post an Update';
+//     echo '';
+// }
 
-function change_post_object_label() {
-        global $wp_post_types;
-        $labels = &$wp_post_types['post']->labels;
-        $labels->name = 'News & Updates';
-        $labels->singular_name = 'news';
-        $labels->add_new = 'Post an Update';
-        $labels->add_new_item = 'Post an Update';
-        $labels->edit_item = 'Edit Updates';
-        $labels->new_item = 'News & Updates';
-        $labels->view_item = 'View Updates';
-        $labels->search_items = 'Search Updates';
-        $labels->not_found = 'No Contacts found';
-        $labels->not_found_in_trash = 'No Contacts found in Trash';
-    }
-    add_action( 'init', 'change_post_object_label' );
-    add_action( 'admin_menu', 'change_post_menu_label' );
+// function change_post_object_label() {
+//         global $wp_post_types;
+//         $labels = &$wp_post_types['post']->labels;
+//         //$labels->name = 'News & Updates';
+//         $labels->singular_name = 'news';
+//         $labels->add_new = 'Post an Update';
+//         $labels->add_new_item = 'Post an Update';
+//         $labels->edit_item = 'Edit Updates';
+//         //$labels->new_item = 'News & Updates';
+//         $labels->view_item = 'View Updates';
+//         $labels->search_items = 'Search Updates';
+//         $labels->not_found = 'No Contacts found';
+//         $labels->not_found_in_trash = 'No Contacts found in Trash';
+//     }
+//     add_action( 'init', 'change_post_object_label' );
+//     add_action( 'admin_menu', 'change_post_menu_label' );
 
 // CUSTOMIZE ADMIN MENU ORDER
    function custom_menu_order($menu_ord) {
@@ -142,3 +144,4 @@ function change_post_object_label() {
     add_filter('custom_menu_order', 'custom_menu_order');
     add_filter('menu_order', 'custom_menu_order');
     add_filter('acf/settings/show_admin', '__return_false');
+

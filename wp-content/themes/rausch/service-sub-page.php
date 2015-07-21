@@ -46,28 +46,19 @@
     </ul>
     <button>Get Started</button>
 </article>
-<article class="list">
+<article class="trifecta">
     <section class="centerpiece">
-        <h1>Our Step-By-Step Process</h1>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. </p>
+        <h1>Why Choose Rausch?</h1>
     </section>
-    <h3 class="col-3-12">Pre-Production</h3>
-    <h3 class="col-3-12">Production</h3>
-    <h3 class="col-3-12">Post-Production</h3>
-    <h3 class="col-3-12">Delivery</h3>
-    <ul>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-        <li class="col-3-12">Client</li>
-    </ul>
+    <section class="featured col-4-12">
+        <h2>Experience</h2>
+        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>
+    </section>
+    <section class="featured col-4-12" >
+        <h2>Knowledge</h2>
+        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>    </section>
+    <section class="featured col-4-12" >
+        <h2>Comittment</h2>
+        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>    </section>
 </article>
 <?php get_footer(); ?>
