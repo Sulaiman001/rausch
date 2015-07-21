@@ -41,9 +41,11 @@ function sitewide_js() {
   wp_register_script( 'main', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0.0', false );
   wp_register_script( 'slider', get_template_directory_uri() . '/js/superslides.js', array( 'jquery' ), '1.0.0', false );
   wp_register_script( 'object-fit', get_template_directory_uri() . '/js/polyfill.object-fit.min.js', array( 'jquery' ), '1.0.0', false );
+  wp_register_script( 'is-in-viewport', get_template_directory_uri() . '/js/isInViewport.min.js', array( 'jquery' ), '1.0.0', false );
   wp_enqueue_script( 'main' );
   wp_enqueue_script( 'slider' );
   wp_enqueue_script( 'object-fit' );
+  wp_enqueue_script( 'is-in-viewport' );
 }
 add_action( 'wp_enqueue_scripts', 'sitewide_js');
 

@@ -19,23 +19,18 @@ $(function() {
     });
 });
 
-// var player = new playerjs.Player('iframe');
+/*----- WORK SUB-PAGE VIDEO AUTOPLAY -----*/
 
-// player.on('ready', function(){
-//   player.on('play', function(){
-//     console.log('play');
-//   });
-
-//   player.getDuration(function(duration){
-//     console.log(duration);
-//   });
-
-//   if (player.supports('method', 'mute')){
-//     player.mute();
-//   }
-
-//   player.play();
-// });
+$(window).scroll(function(){
+  $('video').each(function(){
+    if ($(this).is(":in-viewport")) {
+        console.log($(this));
+        $(this)[0].play();
+    } else {
+        $(this)[0].pause();
+    }
+  });
+});
 
 
 /*----- PARALLAX -----*/
