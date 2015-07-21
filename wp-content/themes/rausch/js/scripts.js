@@ -1,20 +1,11 @@
 jQuery(document).ready(function($){
 
-/*----- FLOWTYPE -----*/
-$('body').flowtype({
-  minimum : 500,
-  maximum : 1920,
-  minFont : 16,
-  maxFont : 62,
-  fontRatio : 60
-});
-
-/*----- DESKTOP VIDEO AUTOPLAY -----*/
+/*----- HOMEPAGE VIDEO AUTOPLAY -----*/
 
 $(function() {
     // onload
     if(document.body.clientWidth >= 870) {
-        $('video').attr('autoplay', true);
+        $('#bgvid').attr('autoplay', true);
       $('#bgvid').css('display','block');
     }
 
@@ -23,10 +14,24 @@ $(function() {
 
     $(window).resize(function() {
         if(document.body.clientWidth >= 870) {
-            $('video').attr('autoplay', true);
+            //$('video').attr('autoplay', true);
         }
     });
 });
+
+/*----- WORK SUB-PAGE VIDEO AUTOPLAY -----*/
+
+$(window).scroll(function(){
+  $('video').each(function(){
+    if ($(this).is(":in-viewport")) {
+        console.log($(this));
+        $(this)[0].play();
+    } else {
+        $(this)[0].pause();
+    }
+  });
+});
+
 
 /*----- PARALLAX -----*/
 var $window = $(window);
@@ -253,7 +258,6 @@ $('[data-type="background"]').each(function(){
     var $bgobj = $(this); // assigning the object
 
     $bgobj.css('background-image', 'url(' + $bgobj.data('background') + ')');
-    $bgobj.children('.centerpiece').css('background', 'rgba(0,0,0,0.5)');
 
     $(window).scroll(function() {
        var yPos = -($window.scrollTop() / $bgobj.data('speed'));

@@ -70,7 +70,12 @@ section {
 }
 
 [data-type="background"] {
+  @extend %mask;
   transform: translate3d(0, 0, 0);
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /* =EXTENSIBLE CLASSES
@@ -120,12 +125,12 @@ section {
   @include respond-to(tablet) {
     width: 80%;
   }
+  color: $white;
+  margin: 0 auto;
   position: relative;
   text-align: center;
-  width: 100%;
-  color: $white;
-  height: auto;
-  margin: 0 auto;
+  width: 100%; height: auto;
+  z-index: 1;
   p {
     padding: $base 0;
   }
@@ -173,7 +178,6 @@ section {
 
 %grid-elem {
   height: 40rem;
-  margin: 1rem;
   background-size: cover;
   background-position: center center;
   color: white;
@@ -229,6 +233,7 @@ section {
   @include transition(all, 0.2s, ease-in-out);
   background: transparent;
   color: $seafoam;
+  cursor: pointer;
   border: 1px solid transparentize($gray, 0.5);
   border-color: $seafoam;
   display: inline-block;
@@ -291,7 +296,7 @@ section {
   display: block;
   line-height: $header-height;
   margin-left: $h4;
-  padding: 2.1328rem 3.78975rem;
+  padding: 2.133rem 2.79rem;
   position: relative;
   top: 1em;
   text-indent: -100%;
@@ -397,6 +402,7 @@ section {
 
 .testimonial {
   @extend %grid-list;
+  @extend %mask;
   .centerpiece {
     @extend %centerpiece;
     .blockquote {
@@ -441,22 +447,26 @@ section {
 }
 
 .featured-projects {
+  background: $white;
   height: auto;
+  section {
+    padding: $h5;
+  }
   h1 {
-    color: white;
-    font-weight: 100;
+    color: $azure;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   .featured {
     @extend %grid-elem;
-    width: calc(33% - 2rem);
-    h2 {
-      background: transparentize($black, .2);
+    .project-title {
+      @include translate(0, -50%);
+      background: transparentize($black, .3);
       margin: 0 auto;
-      position: relative;
+      padding: $h4;
+      position: absolute;
       display: block;
-      top: 70%;
+      top: 50%;
     }
   }
 }
@@ -475,7 +485,7 @@ section {
     height: auto;
     margin: 5rem 0;
     .case-info {
-      width: 50%;
+      width: 45%;
       display: inline-block;
       color: $white;
       position:relative;
@@ -489,9 +499,9 @@ section {
     }
     video {
       position: relative;
-      width: 45%;
+      width: 50%;
       display: inline-block;
-      margin-left: 5rem;
+      margin-left: 2rem;
       background: #000;
       top: 1rem;
     }
@@ -508,6 +518,7 @@ section {
 ----------------------------------------------- */
 
 .service-head {
+  height: 100vh;
   background-size:cover;
   p {
     color: $white;
@@ -534,14 +545,19 @@ section {
     h2 {
       border-radius: 100px;
       background: $azure;
-      height: 180px;
-      width: 180px;
-      padding: 7rem 0rem;
-      margin: 0 auto 2rem;
+      height: 200px;
+      width: 200px;
+      margin: 0px auto 2rem;
+      padding: 4.5rem 0 0;
+      position: relative;
+      display: inline-block;
+      font-size: 24pt;
       &::after {
         content: ">";
         position: absolute;
-        right: 0;
+        left: 15rem;
+        font-size: 44pt;
+        line-height: 24pt;
         color: $lime-green;
       }
     }
@@ -606,6 +622,7 @@ section {
 /* TEAM
 ----------------------------------------------- */
 
+
 .team-head {
   height: 100vh;
   background-size:cover;
@@ -647,13 +664,14 @@ section {
 
 .closing-statement {
   height: auto;
-  background: $azure;
+  background: $weird-gray;
+  padding:0;
   h2, h4 {
-    margin-top: 3rem;
+    margin: 1rem 0;
     font-weight: 100;
   }
   button {
-    margin-top: 4rem;
+    margin: 1rem 0;
     @extend %button;
   }
   .centerpiece {

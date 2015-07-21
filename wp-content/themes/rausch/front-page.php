@@ -4,9 +4,7 @@
 
   <div class="mask-container">
     <video loop muted id="bgvid">
-      <source src="<?php bloginfo('template_directory'); ?>/img/rausch-events.webm" type="video/webm">
-      <source src="<?php bloginfo('template_directory'); ?>/img/rausch-events.mp4" type="video/mp4">
-      <source src="<?php bloginfo('template_directory'); ?>/img/rausch-events.ogv" type="video/ogg">
+      <source src="<?php bloginfo('template_directory'); ?>/img/newvid.mp4" type="video/mp4">
     </video>
   </div>
 

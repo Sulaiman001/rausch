@@ -34,7 +34,7 @@
 
 <article class="trifecta">
     <section class="centerpiece">
-        <h1>Why Rausch Productions?</h1>
+        <h1>Why Choose Rausch?</h1>
     </section>
     <section class="featured col-4-12">
         <h2>Experience</h2>

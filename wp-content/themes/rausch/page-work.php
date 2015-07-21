@@ -11,17 +11,30 @@
 <article class="featured-projects">
 
     <h1>Featured Projects</h1>
-    <section class="featured col-4-12" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/Political6.jpg'); ?>">
-        <a href="/rausch/work/corporate-events"></a>
-        <h2>Rockwell Collins</h2>
+    
+    <section class="col-4-12">
+      <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/Political6.jpg'); ?>">
+        <a href="/rausch/work/corporate-events">
+          <h2 class="project-title">Rockwell Collins</h2>
+        </a>
+      </figure>
     </section>
-    <section class="featured col-4-12" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF2.jpg'); ?>">
-        <a href="/rausch/work/universities"></a>
-        <h2>Ashford University</h2>
+    
+    <section class="col-4-12">
+      <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF2.jpg'); ?>">
+        <a href="/rausch/work/universities">
+          <h2 class="project-title">Ashford University</h2>
+        </a>
+      </figure>
+
     </section>
-    <section class="featured col-4-12" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF8.jpg'); ?>">
-        <a href="/rausch/work/political"></a>
-        <h2>JDRF</h2>
+    
+    <section class="col-4-12">
+      <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF8.jpg'); ?>">
+        <a href="/rausch/work/political">
+          <h2 class="project-title">JDRF</h2>
+        </a>
+      </figure>
     </section>
 
 </article>
