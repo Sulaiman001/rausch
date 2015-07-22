@@ -23,13 +23,43 @@ $(function() {
 
 $(window).scroll(function(){
   $('video').each(function(){
-    if ($(this).is(":in-viewport")) {
-        console.log($(this));
+    if ($(this).is(":in-viewport( 300 )")) {
         $(this)[0].play();
     } else {
         $(this)[0].pause();
     }
   });
+});
+
+/*----- WORK SUB-PAGE VIDEO AUTOPLAY UNMUTE FUNCTIONALITY -----*/
+
+$('.vid-contain').hover(function() {
+  $(this).children('i').removeClass('fa-volume-off');
+  $(this).children('i').addClass('fa-volume-up');
+  $(this).click(function() {
+    $(this).addClass('perm');
+    $(this).children('video').prop('muted', false);
+
+    // $('.perm').hover(function() {
+    //   $(this).children('i').removeClass('fa-volume-up');
+    //   $(this).children('i').addClass('fa-volume-off');
+    //   $(this).click(function() {
+    //     $(this).children('video').prop('muted', true);
+    //     $(this).removeClass('perm');
+    //   });
+    // }, function() {
+    //   if($(this).hasClass('perm')) {
+    //     $(this).children('i').removeClass('fa-volume-off');
+    //     $(this).children('i').addClass('fa-volume-up');
+    //   }
+    // });
+
+  });
+}, function() {
+  if(!($(this).hasClass('perm'))) {
+    $(this).children('i').removeClass('fa-volume-up');
+    $(this).children('i').addClass('fa-volume-off');
+  }
 });
 
 

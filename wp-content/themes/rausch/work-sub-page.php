@@ -1,6 +1,7 @@
 <?php
     /* Template Name: Work Sub Page */
     get_header();
+    opcache_reset();
     global $post;
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 
@@ -29,12 +30,24 @@
             <h2><?php the_title(); ?></h2>
             <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
         </div>
-        <video loop muted>
-            <source src="<?php the_field('embed_url') ?>" type="video/mp4">
-        </video>
+        <div class="vid-contain">
+            <i class="fa fa-volume-off fa-2x"></i>
+            <video muted>
+                <source src="<?php the_field('video') ?>" type="video/mp4">
+            </video>
+        </div>
     </section>
     <?php
         endwhile;
     ?>
 </article>
+<article class="testimonial" data-speed="15" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
+    <section class="centerpiece">
+        <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
+        <p>-Sarah</p>
+        <p>Event Coordinator, Ashford University</p>
+        <button>View Client List</button>
+    </section>
+</article>
+
 <?php get_footer(); ?>

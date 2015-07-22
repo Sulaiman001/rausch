@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<article class="work-head" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/VidProduction6.jpg'); ?>">
+<article class="work-head" data-speed="15" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/VidProduction6.jpg'); ?>">
 
   <section class="centerpiece">
       <h1>Our Work</h1>
@@ -11,7 +11,7 @@
 <article class="featured-projects">
 
     <h1>Featured Projects</h1>
-    
+
     <section class="col-4-12">
       <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/Political6.jpg'); ?>">
         <a href="/rausch/work/corporate-events">
@@ -19,7 +19,7 @@
         </a>
       </figure>
     </section>
-    
+
     <section class="col-4-12">
       <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF2.jpg'); ?>">
         <a href="/rausch/work/universities">
@@ -27,7 +27,7 @@
         </a>
       </figure>
     </section>
-    
+
     <section class="col-4-12">
       <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF8.jpg'); ?>">
         <a href="/rausch/work/political">
@@ -43,7 +43,7 @@
         </a>
       </figure>
     </section>
-    
+
     <section class="col-4-12">
       <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF2.jpg'); ?>">
         <a href="/rausch/work/universities">
@@ -51,7 +51,7 @@
         </a>
       </figure>
     </section>
-    
+
     <section class="col-4-12">
       <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF8.jpg'); ?>">
         <a href="/rausch/work/political">
@@ -60,6 +60,15 @@
       </figure>
     </section>
 
+</article>
+
+<article class="testimonial" data-speed="15" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
+    <section class="centerpiece">
+        <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
+        <p>-Sarah</p>
+        <p>Event Coordinator, Ashford University</p>
+        <button>View Client List</button>
+    </section>
 </article>
 
 <article class="work-clients">

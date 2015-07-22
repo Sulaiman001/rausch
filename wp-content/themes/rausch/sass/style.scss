@@ -217,7 +217,7 @@ section {
 
 %blockquote {
   @include respond-to(laptop) {
-    padding: $h5 $h3;
+    padding: $h5 $h5;
   }
   font-weight: 100;
   padding: $small;
@@ -225,14 +225,14 @@ section {
     content: '\201C';
     font-size: 275%;
     position: absolute;
-    top: 0; left: -5px;
+    top: 0; left: 0;
     width: auto; height: auto;
   }
   &::after {
     content: '\201D';
     font-size: 275%;
     position: absolute;
-    top: 0; right: -5px;
+    top: 0; right: 0;
     width: auto; height: auto;
   }
 }
@@ -392,6 +392,7 @@ section {
 .testimonial {
   @extend %grid-list;
   @extend %mask;
+  height: 100vh;
   .centerpiece {
     .blockquote {
       @extend %blockquote;
@@ -399,9 +400,11 @@ section {
         line-height: 1.2;
       }
       line-height: 1.4;
+
     }
     p {
       margin: 0;
+      padding:0;
     }
     p:last-of-type {
       margin-bottom: 2rem;
@@ -467,10 +470,11 @@ section {
 .case-studies {
   height: auto;
   section {
-    height: auto;
-    margin: 5rem 0;
+    height: 75vh;
+    margin: 5rem 0 0;
     .case-info {
-      width: 45%;
+      float:left;
+      width: 50%;
       display: inline-block;
       color: $white;
       position:relative;
@@ -482,13 +486,24 @@ section {
         padding-left: 4rem;
       }
     }
-    video {
-      position: relative;
+    .vid-contain {
+      float:left;
       width: 50%;
+      position: relative;
       display: inline-block;
-      margin-left: 2rem;
-      background: #000;
       top: 1rem;
+      padding-left: 2rem;
+      i {
+        position:absolute;
+        bottom: 1rem;
+        right: 1rem;
+        color: #FFF;
+        cursor: pointer;
+      }
+      video {
+        width: 100%;
+        background: #000;
+      }
     }
     &:first-of-type {
       margin-top: 0;

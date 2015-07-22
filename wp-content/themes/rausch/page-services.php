@@ -1,5 +1,5 @@
-<?php get_header(); ?>
-<article class="service-head" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/VidProduction1.jpg'); ?>">
+<?php get_header(); opcache_reset(); ?>
+<article class="service-head" data-speed="15" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/VidProduction1.jpg'); ?>">
 
   <section class="centerpiece">
       <h1>Our Services</h1>
@@ -30,6 +30,15 @@
 
     <a href="#"><button>Meet With Us</button></a>
 
+</article>
+
+<article class="testimonial" data-speed="15" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
+    <section class="centerpiece">
+        <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
+        <p>-Sarah</p>
+        <p>Event Coordinator, Ashford University</p>
+        <button>View Client List</button>
+    </section>
 </article>
 
 <article class="trifecta">
