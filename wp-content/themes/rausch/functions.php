@@ -15,24 +15,23 @@ if ( ! function_exists( 'rausch_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 
-// add_action('init','film_post_type');
+add_action('init','team_post_type');
 
-// function film_post_type(){
+function team_post_type(){
 
-//     register_post_type('film',array(
-//         'labels' => array(
-//             'name' => __('Films'),
-//             'singular_name' => __('Film')
-//             ),
-//         'taxonomies' => array('category'),
-//         'public' => true,
-//         'show_ui' => true,
-//         'show_in_menu' => true,
-//         'show_in_nav_menus' => true,
-//         'has_archive' => true
-//         ));
+    register_post_type('team',array(
+        'labels' => array(
+            'name' => __('Team Members'),
+            'singular_name' => __('Team Member')
+            ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'has_archive' => true
+        ));
 
-// }
+}
 
 
 function sitewide_js() {
