@@ -26,7 +26,30 @@
           <h2 class="project-title">Ashford University</h2>
         </a>
       </figure>
+    </section>
+    
+    <section class="col-4-12">
+      <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF8.jpg'); ?>">
+        <a href="/rausch/work/political">
+          <h2 class="project-title">JDRF</h2>
+        </a>
+      </figure>
+    </section>
 
+    <section class="col-4-12">
+      <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/Political6.jpg'); ?>">
+        <a href="/rausch/work/corporate-events">
+          <h2 class="project-title">Rockwell Collins</h2>
+        </a>
+      </figure>
+    </section>
+    
+    <section class="col-4-12">
+      <figure class="featured" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/UandF2.jpg'); ?>">
+        <a href="/rausch/work/universities">
+          <h2 class="project-title">Ashford University</h2>
+        </a>
+      </figure>
     </section>
     
     <section class="col-4-12">
