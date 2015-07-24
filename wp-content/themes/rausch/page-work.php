@@ -64,7 +64,7 @@ $button_message = get_post_meta($post->ID, 'button_message');
 
 <article class="work-clients">
     <section class="centerpiece">
-        <h1>Clients</h1>
+        <h1 class="secondary-heading">Clients</h1>
         <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
     </section>
     <ul>

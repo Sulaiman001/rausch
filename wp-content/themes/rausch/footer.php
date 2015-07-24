@@ -2,7 +2,7 @@
 
 <article class="closing-statement">
     <section class="centerpiece">
-        <h2>Ready to build your experience?</h2>
+        <h1>Ready to build your experience?</h1>
         <a href="/rausch/contact"><button>Let's Do It</button></a>
     </section>
 </article>
