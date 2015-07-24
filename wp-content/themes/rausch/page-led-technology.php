@@ -50,4 +50,18 @@
         <h2>Comittment</h2>
         <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>    </section>
 </article>
-<?php get_footer(); ?>
+</main>
+
+<article class="closing-statement">
+    <section class="centerpiece">
+        <h2><?php echo($footer_message[0]); ?></h2>
+        <a href="/rausch/contact"><button><?php echo($button_message[0]); ?></button></a>
+    </section>
+</article>
+
+<footer>
+  <section class="centerpiece">
+    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
+    <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
+  </section>
+</footer>

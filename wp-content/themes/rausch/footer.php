@@ -9,8 +9,8 @@
 
 <footer>
   <section class="centerpiece">
+    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
     <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
-    <em href="tel:3192949410">319-294-9410</em>
   </section>
 </footer>
 
