@@ -2,14 +2,14 @@
 
 <article class="closing-statement">
     <section class="centerpiece">
-        <h2>Ready to build your experience?</h2>
+        <h1>Ready to build your experience?</h1>
         <a href="/rausch/contact"><button>Let's Do It</button></a>
     </section>
 </article>
 
 <footer>
   <section class="centerpiece">
-    <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
+    <p class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</p>
     <em href="tel:3192949410">319-294-9410</em>
   </section>
 </footer>
