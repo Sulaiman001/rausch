@@ -9,14 +9,17 @@
 </article>
 
 <article class="led-products">
-
-    <h1>LED Technology Products</h1>
+   
     <section class="featured col-6-12" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/country-screen.jpg'); ?>">
-        <a href="/rausch/led-technology/mobile-led-screens"></a>
+        <a href="/rausch/led-technology/mobile-led-screens">
+          <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/mobile-led-screens.png" />
+        </a>
         <h2>Mobile LED Screens</h2>
     </section>
     <section class="featured col-6-12" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/concert-video-wall.jpg'); ?>">
-        <a href="/rausch/led-technology/video-walls"></a>
+        <a href="/rausch/led-technology/video-walls">
+          <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/led-walls.png" />
+        </a>
         <h2>Video Walls</h2>
     </section>
 
