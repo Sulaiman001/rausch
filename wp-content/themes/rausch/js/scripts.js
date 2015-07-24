@@ -62,6 +62,15 @@ $('.vid-contain').hover(function() {
   }
 });
 
+$('.vid-contain').each(function() {
+  var $contain = $(this);
+  $contain.children('video').on('ended',function(){
+    $contain.children('i').removeClass('fa-volume-up');
+    $contain.children('i').addClass('fa-volume-off');
+    $(this).prop('muted', false);
+  });
+});
+
 
 /*----- PARALLAX -----*/
 var $window = $(window);

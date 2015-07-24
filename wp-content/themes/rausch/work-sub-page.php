@@ -1,7 +1,6 @@
 <?php
     /* Template Name: Work Sub Page */
     get_header();
-    opcache_reset();
     global $post;
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 
@@ -46,7 +45,6 @@
         <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
         <p>-Sarah</p>
         <p>Event Coordinator, Ashford University</p>
-        <button>View Client List</button>
     </section>
 </article>
 

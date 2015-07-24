@@ -105,7 +105,7 @@ section {
   }
   color: $white;
   font-size: $h4;
-  font-weight: 300;
+  // font-weight: 300;
   letter-spacing: 1px;
   padding: $base - 0.2 $h4 $base;
   position: relative;
@@ -169,7 +169,7 @@ section {
   position: relative;
   h1 {
     color: $white;
-    font-weight: 100;
+    //font-weight: 100;
   }
   p {
     color: $white;
@@ -437,6 +437,7 @@ section {
 }
 
 .featured-projects {
+  color: $weird-gray;
   background: $white;
   height: auto;
   section {
@@ -463,8 +464,12 @@ section {
 }
 
 .work-clients {
-  height: auto;
   @extend %grid-list;
+  height: auto;
+  background: $purple;
+  li {
+    color:white;
+  }
 }
 
 .case-studies {
@@ -534,10 +539,20 @@ section {
 }
 
 .approach {
+  background: $white;
+  color: $weird-gray;
   height: auto;
   text-align: center;
+  .centerpiece{
+    @extend %centerpiece;
+    color: $weird-gray;
+    h1 {
+      color: $weird-gray;
+    }
+  }
   .featured {
     @extend %trifecta;
+    color: $weird-gray;
     h2 {
       border-radius: 100px;
       background: $azure;
@@ -591,8 +606,9 @@ section {
 
 .led-products {
   height: auto;
+  background:$white;
   h1 {
-    font-weight: 100;
+    color: $weird-gray;
     text-align: center;
     margin-bottom: 5rem;
   }
@@ -610,6 +626,10 @@ section {
   .benefit {
     @extend %trifecta;
     margin-top: 5rem;
+    color: $weird-gray;
+    h2 {
+      color: $weird-gray;
+    }
   }
 }
 
@@ -659,7 +679,6 @@ section {
   background: $weird-gray;
   h2, h4 {
     margin: 1rem 0;
-    font-weight: 100;
   }
   button {
     margin: 1rem 0;
