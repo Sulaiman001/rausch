@@ -11,7 +11,7 @@
   <section class="halfpiece intro-copy col-5-12">
     <h1>Award-winning multimedia production company</h1>
     <p>Rausch Productions provides you with the techniques and tools to educate, entertain and engage your audience. We employ the latest audiovisual technology to build that connection, whether it’s a web video directed at new clients, presenting sales goals to your staff of 50, or putting on a concert for 3000 of your biggest fans.</p>
-    <button>Learn More</button>
+    <a href="/Rausch/work"><button>Learn More</button></a>
   </section>
 
 </article>
@@ -26,12 +26,12 @@
 
   <section class="halfpiece">
       <p>With a full range of capabilities from video production to event management, we offer the most creative and cutting edge production solutions available unique to your live event needs.</p>
-      <a href="/rausch/services"><button>View Our Process</button></a>
+      <a href="/rausch/services"><button>See Our Services</button></a>
   </section>
 
   <section class="halfpiece">
       <p>LED technology provides dazzling images that enhance any live entertainment experience. Investing in LED wall and mobile screen solutions is investing in a reliable, budget-friendly option—guaranteed to engage your audience.</p>
-      <a href="/rausch/led-technology"><button>View Our Screens</button></a>
+      <a href="/rausch/led-technology"><button>Witness Our LEDs</button></a>
   </section>
 
 </article>

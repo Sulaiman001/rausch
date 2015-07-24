@@ -9,7 +9,8 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes();
+ ?> class="no-js">
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
@@ -25,6 +26,7 @@
     <script src="//use.typekit.net/mhx0ocv.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
 
   <body>
