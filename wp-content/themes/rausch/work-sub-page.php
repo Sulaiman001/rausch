@@ -47,5 +47,18 @@
         <p>Event Coordinator, Ashford University</p>
     </section>
 </article>
+</main>
 
-<?php get_footer(); ?>
+<article class="closing-statement">
+    <section class="centerpiece">
+        <h2><?php echo($footer_message[0]); ?></h2>
+        <a href="/rausch/contact"><button><?php echo($button_message[0]); ?></button></a>
+    </section>
+</article>
+
+<footer>
+  <section class="centerpiece">
+    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
+    <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
+  </section>
+</footer>
