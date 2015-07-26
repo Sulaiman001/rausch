@@ -12,15 +12,17 @@
 </article>
 <article class="trifecta">
     <section class="featured col-4-12">
-        <h2>Benefit 1</h2>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>
+        <h2><?php echo(get_post_meta($post->ID, 'benefit_a_title')[0]); ?></h2>
+        <p><?php echo(get_post_meta($post->ID, 'benefit_a_text')[0]); ?></p>
     </section>
     <section class="featured col-4-12" >
-        <h2>Benefit 2</h2>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>    </section>
+        <h2><?php echo(get_post_meta($post->ID, 'benefit_b_title')[0]); ?></h2>
+        <p><?php echo(get_post_meta($post->ID, 'benefit_b_text')[0]); ?></p>
+    </section>
     <section class="featured col-4-12" >
-        <h2>Benefit 3</h2>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>    </section>
+        <h2><?php echo(get_post_meta($post->ID, 'benefit_c_title')[0]); ?></h2>
+        <p><?php echo(get_post_meta($post->ID, 'benefit_c_text')[0]); ?></p>
+    </section>
 </article>
 <article class="list">
     <section class="centerpiece">

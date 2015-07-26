@@ -222,20 +222,20 @@ section {
   }
   font-weight: 100;
   padding: $small;
-  &::before {
-    content: '\201C';
-    font-size: 275%;
-    position: absolute;
-    top: 0; left: 0;
-    width: auto; height: auto;
-  }
-  &::after {
-    content: '\201D';
-    font-size: 275%;
-    position: absolute;
-    top: 0; right: 0;
-    width: auto; height: auto;
-  }
+  // &::before {
+  //   content: '\201C';
+  //   font-size: 275%;
+  //   position: absolute;
+  //   top: 2rem; left: 0;
+  //   width: auto; height: auto;
+  // }
+  // &::after {
+  //   content: '\201D';
+  //   font-size: 275%;
+  //   position: absolute;
+  //   top: 2rem; right: 0;
+  //   width: auto; height: auto;
+  // }
 }
 
 %button {
@@ -313,7 +313,7 @@ section {
 }
 
 .trifecta {
-  background: $purple;
+  // background: $purple;
   height: auto;
   .featured {
     @extend %trifecta;
@@ -400,16 +400,22 @@ section {
 .testimonial {
   @extend %grid-list;
   @extend %mask;
+  @include respond-to(laptop) {
+    padding: 7rem $h2;
+  }
+  @include respond-to(desktop) {
+    padding: 5rem $h1;
+  }
   height: 100vh;
   .centerpiece {
-    blockquote {
+    .blockquote {
       @extend %blockquote;
       @include respond-to(laptop) {
         font-size: $h3;
-        line-height: 1.2;
+        line-height: 2.5rem;
       }
       font-size: $h5;
-      line-height: 1.4;
+      line-height: 2.5rem;
 
     }
     p {
@@ -447,8 +453,6 @@ section {
 }
 
 .featured-projects {
-  color: $weird-gray;
-  background: $white;
   height: auto;
   section {
     padding: $h5;
@@ -475,7 +479,7 @@ section {
 .work-clients {
   @extend %grid-list;
   height: auto;
-  background: $purple;
+  //background: $purple;
   li {
     color:white;
   }
@@ -548,23 +552,16 @@ section {
 }
 
 .approach {
-  background: $white;
-  color: $weird-gray;
   height: auto;
   text-align: center;
   .centerpiece{
     @extend %centerpiece;
-    color: $weird-gray;
-    h1 {
-      color: $weird-gray;
-    }
   }
   .featured {
     @extend %trifecta;
-    color: $weird-gray;
     h2 {
       border-radius: 100px;
-      background: $azure;
+      background: $purple;
       height: 200px;
       width: 200px;
       margin: 0px auto 2rem;
@@ -621,9 +618,7 @@ section {
 
 .led-products {
   height: auto;
-  background:$white;
   h1 {
-    color: $weird-gray;
     text-align: center;
     margin-bottom: 5rem;
   }
@@ -647,10 +642,6 @@ section {
   .benefit {
     @extend %trifecta;
     margin-top: 5rem;
-    color: $weird-gray;
-    h2 {
-      color: $weird-gray;
-    }
   }
 }
 
