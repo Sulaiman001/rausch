@@ -549,6 +549,82 @@ section {
   .centerpiece {
     margin-top: 20vh;
   }
+  .icon-display {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    height: 100px;
+    li {
+      position: relative;
+      display: inline-block;
+      height: inherit;
+      a {
+        position: absolute;
+        top:0; left:0;
+        bottom:0; right:0;
+      }
+      .event-management {
+        &::after {
+          content: "Event Management";
+          text-align: center;
+          font-size: 12pt;
+          display: block;
+          position: absolute;
+          width: 100%;
+          margin: 0px;
+          bottom: -1rem;
+        }
+      }
+      .live-event-production {
+        &::after {
+          content: "Live Event Production";
+          text-align: center;
+          font-size: 12pt;
+          display: block;
+          position: absolute;
+          width: 100%;
+          margin: 0px;
+          bottom: -1rem;
+        }
+      }
+      .video-production {
+        &::after {
+          content: "Video Production";
+          text-align: center;
+          font-size: 12pt;
+          display: block;
+          position: absolute;
+          width: 100%;
+          margin: 0px;
+          bottom: -1rem;
+        }
+      }
+      .special-events {
+        &::after {
+          content: "Special Events";
+          text-align: center;
+          font-size: 12pt;
+          display: block;
+          position: absolute;
+          width: 100%;
+          margin: 0px;
+          bottom: -1rem;
+        }
+      }
+      .rentals {
+        &::after {
+          content: "Rentals";
+          text-align: center;
+          font-size: 12pt;
+          display: block;
+          position: absolute;
+          width: 100%;
+          margin: 0px;
+          bottom: -1rem;
+        }
+      }
+    }
+  }
 }
 
 .approach {
@@ -624,7 +700,8 @@ section {
   }
   .featured {
     @extend %grid-elem;
-    width: 50%; height: 100%;
+    width: 46%; height: 25rem;
+    margin: 0 2%;
     a {
       @include transition;
       background: $mask-black;

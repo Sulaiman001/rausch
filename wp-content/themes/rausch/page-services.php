@@ -10,6 +10,33 @@
       <h1>Our Services</h1>
       <p><?php echo($post->post_content); ?></p>
   </section>
+  <ul class="icon-display">
+      <li class='col-2-12'>
+          <a class="event-management" href="/Rausch/services/event-management">
+              <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/event-management.png" />
+          </a>
+      </li>
+      <li class='col-2-12'>
+          <a class="live-event-production" href="/Rausch/services/live-event-production">
+              <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/live-event-production.png" />
+          </a>
+      </li>
+      <li class='col-2-12'>
+          <a class="video-production" href="/Rausch/services/video-production">
+              <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/video-production.png" />
+          </a>
+      </li>
+      <li class='col-2-12'>
+          <a class="special-events" href="/Rausch/services/special-events">
+              <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/special-events.png" />
+          </a>
+      </li>
+      <li class='col-2-12'>
+          <a class="rentals" href="/Rausch/services/rentals">
+              <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/mobile-led-screens.png" />
+          </a>
+      </li>
+  </ul>
 
 </article>
 
