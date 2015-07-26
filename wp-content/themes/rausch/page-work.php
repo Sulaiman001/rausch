@@ -1,5 +1,4 @@
 <?php get_header();
-opcache_reset();
 global $post;
 $footer_message = get_post_meta($post->ID, 'footer_message');
 $button_message = get_post_meta($post->ID, 'button_message');
@@ -8,7 +7,7 @@ $button_message = get_post_meta($post->ID, 'button_message');
 
   <section class="centerpiece">
       <h1>Our Work</h1>
-      <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
+      <p><?php echo($post->post_content); ?></p>
   </section>
 
 </article>
@@ -50,15 +49,15 @@ $button_message = get_post_meta($post->ID, 'button_message');
     <?php
         // endwhile;
       endwhile;
+      wp_reset_postdata();
     ?>
 
 </article>
-
-<article class="testimonial" data-speed="15" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
+<article class="testimonial" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
-        <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
-        <p>-Sarah</p>
-        <p>Event Coordinator, Ashford University</p>
+        <h3 class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></h3>
+        <p>-<?php echo(get_post_meta($post->ID, 'testifier')[0]); ?></p>
+        <p><?php echo(get_post_meta($post->ID, 'job_title')[0]); ?></p>
     </section>
 </article>
 
