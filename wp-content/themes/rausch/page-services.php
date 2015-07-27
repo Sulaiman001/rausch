@@ -12,27 +12,27 @@
   </section>
   <ul class="icon-display">
       <li class='col-2-12'>
-          <a class="event-management" href="/Rausch/services/event-management">
+          <a class="event-management" href="/rausch/services/event-management">
               <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/event-management.png" />
           </a>
       </li>
       <li class='col-2-12'>
-          <a class="live-event-production" href="/Rausch/services/live-event-production">
+          <a class="live-event-production" href="/rausch/services/live-event-production">
               <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/live-event-production.png" />
           </a>
       </li>
       <li class='col-2-12'>
-          <a class="video-production" href="/Rausch/services/video-production">
+          <a class="video-production" href="/rausch/services/video-production">
               <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/video-production.png" />
           </a>
       </li>
       <li class='col-2-12'>
-          <a class="special-events" href="/Rausch/services/special-events">
+          <a class="special-events" href="/rausch/services/special-events">
               <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/special-events.png" />
           </a>
       </li>
       <li class='col-2-12'>
-          <a class="rentals" href="/Rausch/services/rentals">
+          <a class="rentals" href="/rausch/services/rentals">
               <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/mobile-led-screens.png" />
           </a>
       </li>
@@ -64,11 +64,11 @@
 
 </article>
 
-<article class="testimonial" data-speed="15" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
+<article class="testimonial" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
-        <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
-        <p>-Sarah</p>
-        <p>Event Coordinator, Ashford University</p>
+        <h3 class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></h3>
+        <p>-<?php echo(get_post_meta($post->ID, 'testifier')[0]); ?></p>
+        <p><?php echo(get_post_meta($post->ID, 'job_title')[0]); ?></p>
     </section>
 </article>
 
