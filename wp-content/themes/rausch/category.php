@@ -1,6 +1,5 @@
 <?php
   get_header();
-  //opcache_reset();
   $categ = get_queried_object();
   $taxonomy = $categ->taxonomy;
   $term_id = $categ->term_id;
@@ -25,7 +24,7 @@
 
 
 <article class="series-screenings col-5-12 no-float">
-  
+
   <h1 class="section-title">Upcoming Screenings</h1>
 
     <?php
