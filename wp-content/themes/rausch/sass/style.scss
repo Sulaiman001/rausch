@@ -128,14 +128,11 @@ section {
 }
 
 %centerpiece {
-  @include respond-to(tablet) {
-    width: 80%;
-  }
   color: $white;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  width: 100%; height: auto;
+  width: 85%; height: auto;
   z-index: 1;
   p {
     padding: $base 0;
@@ -321,6 +318,9 @@ section {
 }
 
 .list {
+  .centerpiece {
+    width: 95%;
+  }
   height: auto;
   @extend %grid-list;
   h3 {
@@ -722,6 +722,18 @@ section {
   }
 }
 
+.screen-items {
+  section {
+    padding: 0 1rem;
+  }
+  p {
+    margin-top:0;
+  }
+  .featured {
+    @extend %grid-elem;
+  }
+}
+
 /* TEAM
 ----------------------------------------------- */
 
@@ -785,10 +797,43 @@ footer {
   color: $white;
   padding: $h4;
   .centerpiece {
-    text-align: left;
+    text-align: center;
+    h1 {
+      &::before {
+        @include translate(-50px,0);
+        background-color: $white;
+        content: "";
+        position: absolute;
+        top: -$base; left: 50%;
+        width: 100px; height: 2px;
+      }
+      &::after {
+        display: none;
+      }
+    }
+    em {
+      display: block;
+    }
+    div, .copyright {
+      display: inline-block;
+    }
+    div a {
+      padding: 1rem .2rem;
+      &:hover {
+        color: $sky-blue;
+      }
+    }
     .copyright {
-      font-size: $base;
       font-weight: 300;
+      font-size: .8rem;
+      margin: 1rem 0;
+      line-height: 1.2rem;
+      @include respond-to(laptop){
+        display: block;
+      }
+      @include respond-to(desktop){
+        display: block;
+      }
     }
   }
 }

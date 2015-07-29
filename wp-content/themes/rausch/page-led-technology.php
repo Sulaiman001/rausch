@@ -28,19 +28,6 @@
         <h2>Video Walls</h2>
     </section>
 
-    <section class="featured col-4-12">
-        <h2><?php echo(get_post_meta($post->ID, 'benefit_a_title')[0]); ?></h2>
-        <p><?php echo(get_post_meta($post->ID, 'benefit_a_text')[0]); ?></p>
-    </section>
-    <section class="featured col-4-12" >
-        <h2><?php echo(get_post_meta($post->ID, 'benefit_b_title')[0]); ?></h2>
-        <p><?php echo(get_post_meta($post->ID, 'benefit_b_text')[0]); ?></p>
-    </section>
-    <section class="featured col-4-12" >
-        <h2><?php echo(get_post_meta($post->ID, 'benefit_c_title')[0]); ?></h2>
-        <p><?php echo(get_post_meta($post->ID, 'benefit_c_text')[0]); ?></p>
-    </section>
-
 </article>
 
 <article class="trifecta">

@@ -22,6 +22,8 @@ $button_message = get_post_meta($post->ID, 'button_message');
           'posts_per_page'=>  -1,
           'post_status'=>     'publish',
           'post_parent'=>     5,
+          'orderby'=>         'title',
+          'order'=>           'ASC',
       );
       $work_cats = new WP_Query( $work_cat_args );
 

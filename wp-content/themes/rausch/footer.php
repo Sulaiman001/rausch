@@ -9,7 +9,17 @@
 
 <footer>
   <section class="centerpiece">
-    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
+    <div>
+        <em href="tel:3192949410">(319) 294-9410</em>
+        <em>2037 North Towne Lane NE
+        <br/> Cedar Rapids, Iowa 52402</em>
+    </div>
+    <div>
+        <a class="fa fa-facebook fa-5x" href="http://www.facebook.com/RauschProductions" target="_blank"></a>
+        <a class="fa fa-twitter fa-5x" href="https://twitter.com/RauschPros" target="_blank"></a>
+        <a class="fa fa-instagram fa-5x" href="https://instagram.com/rauschpros/" target="_blank"></a>
+        <a class="fa fa-vimeo-square fa-5x" href="http://vimeopro.com/rauschproductions/showcase" target="_blank"></a>
+    </div>
     <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
   </section>
 </footer>

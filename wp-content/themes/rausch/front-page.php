@@ -1,5 +1,15 @@
-<?php get_header(); ?>
-
+<?php
+get_header();
+$home_page_args = array(
+    'post_type' =>      'page',
+    'numberposts'=>     -1,
+    'posts_per_page'=>  -1,
+    'post_status'=>     'publish',
+    'pagename'=>        'home'
+);
+$home_page = new WP_Query( $home_page_args );
+if ( $home_page->have_posts() ) while ( $home_page->have_posts() ) : $home_page->the_post();
+?>
 <article class="video-intro">
 
   <div class="mask-container">
@@ -9,9 +19,9 @@
   </div>
 
   <section class="halfpiece intro-copy col-5-12">
-    <h1>Award-winning multimedia production company</h1>
-    <p>Rausch Productions provides you with the techniques and tools to educate, entertain and engage your audience. We employ the latest audiovisual technology to build that connection, whether it’s a web video directed at new clients, presenting sales goals to your staff of 50, or putting on a concert for 3000 of your biggest fans.</p>
-    <a href="/Rausch/work"><button>Learn More</button></a>
+    <h1><?php the_field('intro_title'); ?></h1>
+    <p><?php the_field('intro_message'); ?></p>
+    <a href="/Rausch/work"><button><?php the_field('intro_button'); ?></button></a>
   </section>
 
 </article>
@@ -20,29 +30,31 @@
 
   <section class="centerpiece">
       <h2>We Build The Experience From Start To Finish</h2>
-      <p>RP was conceived fifteen years ago in a single attic office, piecing together partnerships through productions based on trusted relationships. Founder and President, Ron Rausch, start the company with one thing in mind;  to provide his clients with a full- service multimedia video production solution. While the industry continues to evolve, we thrive to build relationships and provide our clients with a full-service experience to enable them to do the same for their guests.</p>
-      <a href="/rausch/work"><button>View Our Work</button></a>
+      <p><?php the_field('work_message'); ?></p>
+      <a href="/rausch/work"><button><?php the_field('work_button'); ?></button></a>
   </section>
 
   <section class="halfpiece">
-      <p>With a full range of capabilities from video production to event management, we offer the most creative and cutting edge production solutions available unique to your live event needs.</p>
-      <a href="/rausch/services"><button>See Our Services</button></a>
+      <p><?php the_field('services_message'); ?></p>
+      <a href="/rausch/services"><button><?php the_field('services_button'); ?></button></a>
   </section>
 
   <section class="halfpiece">
-      <p>LED technology provides dazzling images that enhance any live entertainment experience. Investing in LED wall and mobile screen solutions is investing in a reliable, budget-friendly option—guaranteed to engage your audience.</p>
-      <a href="/rausch/led-technology"><button>Witness Our LEDs</button></a>
+      <p><?php the_field('led_message'); ?></p>
+      <a href="/rausch/led-technology"><button><?php the_field('led_button'); ?></button></a>
   </section>
 
 </article>
 
-<article class="testimonial" data-speed="15" data-type="background" data-background="<?php bloginfo('template_directory'); ?>/img/VidProduction2.jpg">
+<article class="testimonial" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
-        <h3 class="blockquote">This was the event of a lifetime! I've literally lost count of how many people have told me that this was the best Commencement that Ashford has ever had. The Rausch team not only worked hard, but also showed great flexibility in helping where help was needed.</h3>
-        <p>-Sarah</p>
-        <p>Event Coordinator, Ashford University</p>
-        <button>View Client List</button>
+        <h3 class="blockquote"><?php the_field('testimonial'); ?></h3>
+        <p>-<?php the_field('testifier'); ?></p>
+        <p><?php the_field('job_title'); ?></p>
     </section>
 </article>
+<?php
+  endwhile;
+?>
 
 <?php get_footer(); ?>

@@ -1,12 +1,13 @@
 <?php
     /* Template Name: LED Sub Page */
+    global $post;
     get_header();
+    print_r($post);
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-    echo(get_the_id());
 ?>
 <article class="led-head" data-speed="15" data-type="background" data-background="<?php echo($image[0]); ?>">
     <section class="centerpiece">
-        <h1><?php the_title(); ?></h1>
+        <h1><?php //echo($post->post_title); ?></h1>
         <p><?php echo($post->post_content); ?></p>
     </section>
 </article>
@@ -25,27 +26,31 @@
     </section>
 </article>
 <article class="list">
-    <section class="centerpiece">
-        <h1><?php the_title(); ?></h1>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. </p>
+    <section class="centerpiece screen-items">
+        <h1><?php //the_field('section_title'); ?></h1>
+        <?php
+            $screen_option_args = array(
+                'post_type' =>      'screen',
+                'numberposts'=>     -1,
+                'posts_per_page'=>  -1,
+                'post_status'=>     'publish',
+                'orderby'=>         'title',
+                'order'=>           'ASC',
+                'category_name'=>   $post->post_name
+            );
+            $screen_options = new WP_Query( $screen_option_args );
+            if ( $screen_options->have_posts() ) while ( $screen_options->have_posts() ) : $screen_options->the_post();
+        ?>
+        <section class="col-4-12">
+            <figure class="featured" data-type="background" data-background="<?php the_field('screenshot'); ?>"></figure>
+            <h2 class="tech-title"><?php the_title(); ?></h2>
+            <p class="tech-specs"><?php the_content(); ?></p>
+        </section>
+        <?php
+            endwhile;
+        ?>
     </section>
-    <h3 class="col-4-12">Specialty 1</h3>
-    <h3 class="col-4-12">Specialty 1</h3>
-    <h3 class="col-4-12">Specialty 1</h3>
-    <ul>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-    </ul>
+
     <button>Place Your Order</button>
 </article>
 <article class="trifecta">

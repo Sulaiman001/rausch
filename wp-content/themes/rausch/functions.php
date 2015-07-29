@@ -33,6 +33,25 @@ function team_post_type(){
 
 }
 
+add_action('init','screen_post_type');
+
+function screen_post_type(){
+
+    register_post_type('screen',array(
+        'labels' => array(
+            'name' => __('Screens'),
+            'singular_name' => __('Screen')
+            ),
+        'taxonomies' => array('category'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'has_archive' => true
+        ));
+
+}
+
 
 function sitewide_js() {
   wp_deregister_script('jquery');
