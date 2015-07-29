@@ -2,12 +2,11 @@
     /* Template Name: LED Sub Page */
     global $post;
     get_header();
-    print_r($post);
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
 <article class="led-head" data-speed="15" data-type="background" data-background="<?php echo($image[0]); ?>">
     <section class="centerpiece">
-        <h1><?php //echo($post->post_title); ?></h1>
+        <h1><?php echo($post->post_title); ?></h1>
         <p><?php echo($post->post_content); ?></p>
     </section>
 </article>
@@ -27,7 +26,7 @@
 </article>
 <article class="list">
     <section class="centerpiece screen-items">
-        <h1><?php //the_field('section_title'); ?></h1>
+        <h1><?php echo(get_post_meta($post->ID, 'section_title')[0]); ?></h1>
         <?php
             $screen_option_args = array(
                 'post_type' =>      'screen',
