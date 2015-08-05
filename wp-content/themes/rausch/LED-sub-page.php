@@ -1,6 +1,5 @@
 <?php
     /* Template Name: LED Sub Page */
-    global $post;
     get_header();
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
@@ -47,10 +46,11 @@
         </section>
         <?php
             endwhile;
+            wp_reset_postdata();
         ?>
     </section>
 
-    <button>Place Your Order</button>
+    <a href="<?php bloginfo('template_directory');?>/img/RauschLEDSpecSheet.pdf" download><button>Download Tech Specs</button></a>
 </article>
 <article class="trifecta">
     <section class="centerpiece">
@@ -67,18 +67,4 @@
         <h2>Comittment</h2>
         <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>    </section>
 </article>
-</main>
-
-<article class="closing-statement">
-    <section class="centerpiece">
-        <h2><?php echo($footer_message[0]); ?></h2>
-        <a href="/rausch/contact"><button><?php echo($button_message[0]); ?></button></a>
-    </section>
-</article>
-
-<footer>
-  <section class="centerpiece">
-    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
-    <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
-  </section>
-</footer>
+<?php get_footer(); ?>

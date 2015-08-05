@@ -1,16 +1,12 @@
 <?php
     /* Template Name: Service Sub Page */
     get_header();
-    global $post;
-    $footer_message = get_post_meta($post->ID, 'footer_message');
-    $button_message = get_post_meta($post->ID, 'button_message');
-    $headtext = $post->post_content;
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
 <article class="service-head" data-speed="15" data-type="background" data-background="<?php echo($image[0]); ?>">
     <section class="centerpiece">
         <h1><?php the_title(); ?></h1>
-        <p><?php echo($headtext); ?></p>
+        <p><?php echo($post->post_content); ?></p>
     </section>
 </article>
 <article class="trifecta">
@@ -81,20 +77,4 @@
         <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>
     </section>
 </article>
-
-</main>
-
-<article class="closing-statement">
-    <section class="centerpiece">
-        <h2><?php echo($footer_message[0]); ?></h2>
-        <a href="/rausch/contact"><button><?php echo($button_message[0]); ?></button></a>
-    </section>
-</article>
-
-<footer>
-  <section class="centerpiece">
-    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
-    <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
-  </section>
-</footer>
-
+<?php get_footer(); ?>

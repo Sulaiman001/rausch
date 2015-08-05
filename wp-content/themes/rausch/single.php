@@ -1,56 +1,27 @@
 <?php get_header(); ?>
 
-<main class="interior">
+<main>
 
   <?php if ( have_posts() ) : ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
-          
-      <?php 
-
-        $image = get_field('image');
-
-        if( !empty($image) ): 
-
-        // vars
-        $url = $image['url'];
-        $title = $image['title'];
-        $alt = $image['alt'];
-        $caption = $image['caption'];
-
-        // thumbnail
-        $size = 'full';
-        $thumb = $image['sizes'][ $size ];
-        $width = $image['sizes'][ $size . '-width' ];
-        $height = $image['sizes'][ $size . '-height' ];
-
-        ?>
-           
-    <article class="intro-image" data-type="background" data-speed="6" style="background-image: url(<?php echo $url; ?>);">
-
-      <div class="caption">
-        <h1 class="caption-text"><?php the_title(); ?></h1>
-      </div>
-
-    <?php endif; ?>
-            
+  <article class="team-mem-head" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'profile_picture')[0])); ?>">
+      <section class="centerpiece">
+          <h1><?php the_title(); ?></h1>
+          <h2><?php echo get_post_meta($post->ID, 'position')[0]; ?></h2>
+      </section>
   </article>
-           
-  <article>
-    
-   <header>
-        <?php previous_post_link( '%link', 'Older' ); ?>
-        <?php next_post_link( '%link', 'Newer' );	?>
-   </header>
 
-    <section class="col-5-12 no-float">
+  <article>
+
+    <section class="col-8-12 no-float">
 
       <?php the_content(); ?>
 
     </section>
-      
+
   </article>
-            
+
     <?php endwhile; ?>
 
 
