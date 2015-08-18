@@ -49,7 +49,7 @@
 
     <article>
 
-      <section class="col-6-12 no-float">
+      <section class="col-8-12 no-float">
 
         <?php the_content(); ?>
 

@@ -1,10 +1,8 @@
 <?php
     get_header();
-    global $post;
-    $footer_message = get_post_meta($post->ID, 'footer_message');
-    $button_message = get_post_meta($post->ID, 'button_message');
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-<article class="service-head" data-speed="15" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/VidProduction1.jpg'); ?>">
+<article class="service-head" data-type="background" data-background="<?php echo($image[0]); ?>">
 
   <section class="centerpiece">
       <h1>Our Services</h1>
@@ -60,11 +58,11 @@
         <p><?php echo(get_post_meta($post->ID, 'entertain')[0]); ?></p>
     </section>
 
-    <a href="#"><button>Meet With Us</button></a>
+    <a href="/rausch/contact"><button><?php echo(get_post_meta($post->ID, 'approach_button')[0]); ?></button></a>
 
 </article>
 
-<article class="testimonial" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
+<article class="testimonial" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
         <h3 class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></h3>
         <p>-<?php echo(get_post_meta($post->ID, 'testifier')[0]); ?></p>
@@ -78,30 +76,15 @@
     </section>
     <section class="featured col-4-12">
         <h2>Experience</h2>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>
+        <p>With over 15+ years of experience in event management,  live event production, video production, special events and LED technology, Rausch understands the business inside and out.</p>
     </section>
     <section class="featured col-4-12" >
         <h2>Knowledge</h2>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>
+        <p>By staying on top of the newest technology and equipment, our talented crew maintains the experience and knowledge needed to run successful events and productions.</p>
     </section>
     <section class="featured col-4-12" >
         <h2>Comittment</h2>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta.</p>
+        <p>Our first priority is helping you create the best live event experience from start to finish. Our commitment to see your event run successfully from start to finish is what makes Rausch Productions the best in the business.</p>
     </section>
 </article>
-</main>
-
-<article class="closing-statement">
-    <section class="centerpiece">
-        <h2><?php echo($footer_message[0]); ?></h2>
-        <a href="/rausch/contact"><button><?php echo($button_message[0]); ?></button></a>
-    </section>
-</article>
-
-<footer>
-  <section class="centerpiece">
-    <span>Phone: </span><em href="tel:3192949410">319-294-9410</em>
-    <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
-  </section>
-</footer>
-
+<?php get_footer(); ?>

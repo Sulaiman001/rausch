@@ -309,5 +309,14 @@ $('[data-type="background"]').each(function(){
     });
 });
 
+/*----- TEAM PROFILE PICTURE HOVER -----*/
+$('.team-profiles').children('section').hover(function(){
+  var $bgobj = $(this).children('figure');
+  $bgobj.css('background-image', 'url(' + $bgobj.data('alt') + ')');
+},function(){
+  var $bgobj = $(this).children('figure');
+  $bgobj.css('background-image', 'url(' + $bgobj.data('background') + ')');
+});
+
 
 });
