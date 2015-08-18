@@ -407,6 +407,9 @@ section {
     padding: 5rem $h1;
   }
   height: 100vh;
+  &::after {
+    background: hsla(345, 6%, 13%, 0.6);
+  }
   .centerpiece {
     .blockquote {
       @extend %blockquote;
@@ -416,7 +419,7 @@ section {
       }
       font-size: $h5;
       line-height: 2.5rem;
-
+      text-transform: none;
     }
     p {
       margin: 0;
@@ -482,6 +485,9 @@ section {
   //background: $purple;
   li {
     color:white;
+  }
+  p {
+    margin-top: 2rem;
   }
 }
 

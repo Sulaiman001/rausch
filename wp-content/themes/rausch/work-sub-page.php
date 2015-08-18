@@ -13,7 +13,7 @@
 
     $case_studies = new WP_Query( $case_args );
 ?>
-<article class="work-head" data-speed="15" data-type="background" data-background="<?php echo($image[0]); ?>">
+<article class="work-head" data-type="background" data-background="<?php echo($image[0]); ?>">
     <section class="centerpiece">
         <h1><?php the_title(); ?></h1>
         <p><?php echo($post->post_content); ?></p>
@@ -26,7 +26,7 @@
     <section>
         <div class="case-info">
             <h2><?php the_title(); ?></h2>
-            <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
+            <?php the_content(); ?>
         </div>
         <div class="vid-contain">
             <i class="fa fa-volume-off fa-2x"></i>
@@ -40,7 +40,7 @@
         wp_reset_postdata();
     ?>
 </article>
-<article class="testimonial" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
+<article class="testimonial" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
         <h3 class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></h3>
         <p>-<?php echo(get_post_meta($post->ID, 'testifier')[0]); ?></p>
