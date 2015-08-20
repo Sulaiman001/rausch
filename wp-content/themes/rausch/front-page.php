@@ -48,7 +48,7 @@ if ( $home_page->have_posts() ) while ( $home_page->have_posts() ) : $home_page-
 
 <article class="testimonial" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
-        <h3 class="blockquote"><?php the_field('testimonial'); ?></h3>
+        <p class="blockquote"><?php the_field('testimonial'); ?></p>
         <p>-<?php the_field('testifier'); ?></p>
         <p><?php the_field('job_title'); ?></p>
     </section>

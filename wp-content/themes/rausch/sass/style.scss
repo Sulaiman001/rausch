@@ -408,15 +408,14 @@ section {
   }
   height: 100vh;
   .centerpiece {
+    width: 100%;
     .blockquote {
       @extend %blockquote;
       @include respond-to(laptop) {
         font-size: $h3;
-        line-height: 2.5rem;
       }
-      font-size: $h5;
-      line-height: 2.5rem;
-
+      font-size: $base;
+      line-height: 1.5;
     }
     p {
       margin: 0;
@@ -464,11 +463,14 @@ section {
   .featured {
     @extend %grid-elem;
     .project-title {
+      @include respond-to(laptop) {
+        font-size: $h4;
+      }
       background: transparentize($black, .1);
-      font-size: $h4;
+      font-size: $base;
       font-weight: 800;
       margin: 0 auto;
-      padding: $h4;
+      padding: $h5;
       position: absolute;
       display: block;
       bottom: 0;
