@@ -88,7 +88,7 @@ section {
 ----------------------------------------------- */
 %mask {
   &::after {
-    background: $mask-black;
+    background: hsla(345, 6%, 13%, 0.65);
     content: "";
     position: absolute;
     top: 0;
@@ -359,6 +359,7 @@ section {
     @include respond-to(tablet) {
       padding: $h2;
     }
+    background: hsla(345, 6%, 13%, 0.75);
     padding: $h3;
     position: absolute;
     bottom: $h4; left: 0;
@@ -490,7 +491,7 @@ section {
 .case-studies {
   height: auto;
   section {
-    height: 75vh;
+    height: 50vh;
     margin: 5rem 0 0;
     .case-info {
       float:left;
@@ -560,6 +561,7 @@ section {
       position: relative;
       display: inline-block;
       height: inherit;
+      width: calc(100% / 5);
       a {
         position: absolute;
         top:0; left:0;
@@ -711,11 +713,18 @@ section {
         background: transparentize($magenta, 0.7);
       }
     }
-    h2 {
+    .project-title {
+      @include respond-to(laptop) {
+        font-size: $h4;
+      }
+      background: transparentize($black, .1);
+      font-size: $base;
+      font-weight: 800;
       margin: 0 auto;
-      position: relative;
+      padding: $h5;
+      position: absolute;
       display: block;
-      top: 70%;
+      bottom: 0;
     }
   }
   .benefit {
@@ -761,17 +770,99 @@ section {
   .featured {
     @extend %grid-elem;
     text-align: center;
-    width: calc(50% - 2rem);
+    height: auto;
+    padding: 1rem;
     h2 {
       position: relative;
       top: 0;
+      font-size: 24pt;
     }
-    .profile-img {
-      width: 80%;
-      height: 250px;
-      background-size: cover;
-      margin: 0 auto;
+    .profile-contain {
+      width: 100%;
+      height: auto;
     }
+    a {
+      position: relative;
+      display: inline-block;
+    }
+  }
+}
+
+.team-mem-head {
+  height: 50vh;
+  .centerpiece {
+    padding-top: 8vh;    
+  }
+  h1 {
+    &::after {
+      display:none;
+    }
+  }
+  h1, h2 {
+    text-align: left;
+  }
+}
+
+.team-mem-body {
+  height: auto;
+  padding: 0;
+  @include respond-to(mobile) {
+    padding-bottom: 1rem;
+  }
+  @include respond-to(tablet) {
+    padding-bottom: 1rem;
+  }
+  @include respond-to(laptop) {
+    padding-bottom: 0;
+  }
+  .team-mem-img {
+    img {
+      height: 100%;
+    }
+  }
+  .team-mem-story {
+    color: white;
+    padding: 1rem 5rem 0 2rem;
+  }
+}
+
+/* CONTACT
+----------------------------------------------- */
+.contact-head {
+  height: 100vh;
+  .centerpiece {
+    @extend %centerpiece;
+    margin-top: 20vh;
+  }
+}
+
+.contact-col {
+  color: white;
+  padding: 0 2rem;
+  h1 {
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.contact-form {
+  color: white;
+  @include respond-to(mobile) {
+    padding: 3rem 0 0;
+  }
+  @include respond-to(tablet) {
+    padding: 3rem 0 0;
+  }
+  @include respond-to(laptop) {
+    padding: 0 7rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  input {
+    padding: .5rem;
+    font-size: 16pt;
   }
 }
 

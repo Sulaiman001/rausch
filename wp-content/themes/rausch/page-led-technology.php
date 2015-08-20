@@ -1,12 +1,26 @@
 <?php
     get_header();
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+    $led_page_args = array(
+        'post_type' =>      'page',
+        'numberposts'=>     -1,
+        'posts_per_page'=>  -1,
+        'post_status'=>     'publish',
+        'pagename'=>        'led-technology'
+    );
+    $led_page = new WP_Query( $led_page_args );
+    if ( $led_page->have_posts() ) while ( $led_page->have_posts() ) : $led_page->the_post();
 ?>
-<article class="led-head" data-type="background" data-background="<?php echo($image[0]); ?>">
+<article class="video-intro led-head">
+
+  <div class="mask-container">
+    <video loop muted id="bgvid">
+      <source src="<?php the_field('header_video') ?>" type="video/mp4">
+    </video>
+  </div>
 
   <section class="centerpiece">
       <h1>LED Technology</h1>
-      <p><?php echo($post->post_content); ?></p>
+      <?php the_content(); ?>
   </section>
 
 </article>
@@ -17,13 +31,13 @@
         <a href="/rausch/led-technology/mobile-led-screens">
           <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/mobile-led-screens.png" />
         </a>
-        <h2>Mobile LED Screens</h2>
+        <h2 class="project-title">Mobile LED Screens</h2>
     </section>
     <section class="featured col-6-12" data-type="background" data-background="<?php echo(get_template_directory_uri().'/img/concert-video-wall.jpg'); ?>">
         <a href="/rausch/led-technology/video-walls">
           <img class="icon" src="<?php bloginfo('template_directory'); ?>/img/icon/led-walls.png" />
         </a>
-        <h2>Video Walls</h2>
+        <h2 class="project-title">Video Walls</h2>
     </section>
 
 </article>
@@ -45,4 +59,7 @@
         <p>Our first priority is helping you create the best live event experience from start to finish. Our commitment to see your event run successfully from start to finish is what makes Rausch Productions the best in the business.</p>
     </section>
 </article>
-<?php get_footer(); ?>
+<?php 
+    endwhile;
+    get_footer(); 
+?>

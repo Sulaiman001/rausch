@@ -28,16 +28,24 @@
         if ( $team_members->have_posts() ) while ( $team_members->have_posts() ) : $team_members->the_post();
     ?>
     <section class="featured col-4-12">
-        <figure data-alt="<?php the_field('picture_alt') ?>" data-type="background" data-background="<?php the_field('profile_picture') ?>">
-          <a href="<?php the_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>">
+            <div class="profile-contain">
+                <img alt="<?php the_field('picture_alt') ?>" src="<?php the_field('profile_picture') ?>" rel="<?php the_field('profile_picture') ?>"/>
+            </div>
             <h2><?php the_title(); ?></h2>
-          </a>
-        </figure>
+        </a>
     </section>
     <?php
         endwhile;
     ?>
 
 </article>
+<script type="text/javascript">
+    $('.profile-contain').children('img').hover(function() {
+        $(this).attr('src', $(this).attr('alt')).stop(true, true);
+    }, function() {
+        $(this).attr('src', $(this).attr('rel')).stop(true, true);
+    });
+</script>
 
 <?php get_footer(); ?>

@@ -24,7 +24,7 @@
         <h1><?php the_field('column_heading'); ?></h1>
         <?php the_field('column_paragraph'); ?>
     </section>
-    <section class="col-6-12">
+    <section class="col-6-12 contact-form">
         <?php the_content(); ?>
     </section>
 </article>
