@@ -73,7 +73,7 @@
         <p>By staying on top of the newest technology and equipment, our talented crew maintains the experience and knowledge needed to run successful events and productions.</p>
     </section>
     <section class="featured col-4-12" >
-        <h2>Comittment</h2>
+        <h2>Commitment</h2>
         <p>Our first priority is helping you create the best live event experience from start to finish. Our commitment to see your event run successfully from start to finish is what makes Rausch Productions the best in the business.</p>
     </section>
 </article>

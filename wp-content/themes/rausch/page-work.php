@@ -5,7 +5,7 @@
 <article class="work-head" data-type="background" data-background="<?php echo($image[0]); ?>">
 
   <section class="centerpiece">
-      <h1>Our Work</h1>
+      <h1>Work</h1>
       <p><?php echo($post->post_content); ?></p>
   </section>
 
@@ -53,7 +53,7 @@
 <!--<article class="work-clients">
     <section class="centerpiece">
         <h1 class="secondary-heading">Clients</h1>
-        <p><?php echo(get_post_meta($post->ID, 'about_clients')[0]); ?></p>
+        <p><?php //echo(get_post_meta($post->ID, 'about_clients')[0]); ?></p>
     </section>
     <ul>
     <?php

@@ -17,7 +17,7 @@
 <article class="team-head" data-type="background" data-background="<?php echo($image[0]); ?>">
 
   <section class="centerpiece">
-      <h1>Our Team</h1>
+      <h1>Team</h1>
       <p><?php echo($post->post_content); ?></p>
   </section>
 
@@ -27,7 +27,7 @@
     <?php
         if ( $team_members->have_posts() ) while ( $team_members->have_posts() ) : $team_members->the_post();
     ?>
-    <section class="featured col-6-12">
+    <section class="featured col-4-12">
         <figure data-alt="<?php the_field('picture_alt') ?>" data-type="background" data-background="<?php the_field('profile_picture') ?>">
           <a href="<?php the_permalink(); ?>">
             <h2><?php the_title(); ?></h2>
