@@ -3,12 +3,14 @@
     get_header();
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-<article class="led-head" data-type="background" data-background="<?php echo($image[0]); ?>">
-    <section class="centerpiece">
+<article class="led bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
+   
+    <section class="centerpiece intro-header">
         <h1><?php echo($post->post_title); ?></h1>
         <p><?php echo($post->post_content); ?></p>
     </section>
 </article>
+
 <article class="trifecta">
     <section class="featured col-4-12">
         <h2><?php echo(get_post_meta($post->ID, 'benefit_a_title')[0]); ?></h2>

@@ -10,7 +10,7 @@
     $led_page = new WP_Query( $led_page_args );
     if ( $led_page->have_posts() ) while ( $led_page->have_posts() ) : $led_page->the_post();
 ?>
-<article class="video-intro led-head">
+<article class="video-intro led">
 
   <div class="mask-container">
     <video loop muted id="bgvid">
@@ -18,7 +18,7 @@
     </video>
   </div>
 
-  <section class="centerpiece">
+  <section class="centerpiece intro-header">
       <h1>LED Technology</h1>
       <?php the_content(); ?>
   </section>

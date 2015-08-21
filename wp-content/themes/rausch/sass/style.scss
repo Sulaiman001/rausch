@@ -127,12 +127,27 @@ section {
   min-height: 350px;
 }
 
+.bg-image-wrap {
+  height: 100vh;
+  background-size: cover;
+}
+
+.intro-header {
+  @include translate(0, -50%);
+  @include respond-to(laptop) {
+    padding: $h2;
+  }
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
 %centerpiece {
   color: $white;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  width: 85%; height: auto;
+  width: 100%; height: auto;
   z-index: 1;
   p {
     padding: $base 0;
@@ -401,14 +416,17 @@ section {
 .testimonial {
   @extend %grid-list;
   @extend %mask;
-  @include respond-to(laptop) {
-    padding: 7rem $h2;
-  }
-  @include respond-to(desktop) {
-    padding: 5rem $h1;
-  }
+  padding: 0;
   height: 100vh;
+  position: relative;
   .centerpiece {
+    @include translate(0, -50%);
+    @include respond-to(laptop) {
+      padding: $h3;
+    }
+    padding: $h5;
+    position: absolute;
+    top: 50%;
     width: 100%;
     .blockquote {
       @extend %blockquote;
@@ -433,29 +451,19 @@ section {
 
 /* =WORK - MAIN
 ----------------------------------------------- */
-
-.work-head {
-  position: relative;
-  height: 100vh;
-  background-size: cover;
-  h1 {
-    color: $white;
-  }
-  p {
-    color: $white;
-  }
+.work {
   button {
     @extend %button;
-  }
-  .centerpiece {
-    margin-top: 20vh;
   }
 }
 
 .featured-projects {
   height: auto;
   section {
-    padding: $h5;
+    @include respond-to(laptop) {
+      padding: $h5;
+    }
+    padding: $h5 0;
   }
   h1 {
     text-align: center;
@@ -491,29 +499,23 @@ section {
 .case-studies {
   height: auto;
   section {
-    height: 50vh;
-    margin: 5rem 0 0;
+    @extend %clearfix;
+    margin: $h1 0 $base 0;
     .case-info {
-      float:left;
-      width: 50%;
       display: inline-block;
       color: $white;
+      margin-bottom: $h5;
       position:relative;
       h2 {
-      text-align: center;
-      margin: 1rem 0 2rem;
-      }
-      p {
-        padding-left: 4rem;
+        text-align: left;
       }
     }
     .vid-contain {
-      float:left;
-      width: 50%;
+      @include respond-to(laptop) {
+        padding-left: 2rem;
+      }
       position: relative;
       display: inline-block;
-      top: 1rem;
-      padding-left: 2rem;
       i {
         position:absolute;
         bottom: 1rem;
@@ -537,20 +539,18 @@ section {
 
 /* SERVICES
 ----------------------------------------------- */
-
-.service-head {
-  height: 100vh;
-  background-size:cover;
+.services {
+  height: auto;
+  .intro-header {
+    @include translate(0, 0);
+    top: auto;
+  }
   p {
-    color: $white;
     font-size: $base;
     font-weight: 300;
   }
   button {
     @extend %button;
-  }
-  .centerpiece {
-    margin-top: 20vh;
   }
   .icon-display {
     width: 80%;
@@ -558,14 +558,23 @@ section {
     position: relative;
     height: 100px;
     li {
+      @include respond-to(laptop) {
+        width: 20%;
+      }
       position: relative;
       display: inline-block;
       height: inherit;
-      width: calc(100% / 5);
+      width: 50%;
       a {
         position: absolute;
         top:0; left:0;
         bottom:0; right:0;
+        .icon {
+          @include respond-to(laptop) {
+            width: 60px;
+          }
+          width: 40px;
+        }
       }
       .event-management {
         &::after {
@@ -680,23 +689,18 @@ section {
   width: 60px; height: auto;
 }
 
-.led-head {
-  height: 100vh;
-  background-size: cover;
+.led {
   p {
-    color: $white;
-    font-size: $base;
+    font-size: $small;
     font-weight: 300;
   }
   button {
     @extend %button;
   }
-  .centerpiece {
-    margin-top: 20vh;
-  }
 }
 
 .led-products {
+  @extend %clearfix;
   height: auto;
   h1 {
     text-align: center;
@@ -704,8 +708,13 @@ section {
   }
   .featured {
     @extend %grid-elem;
-    width: 46%; height: 25rem;
-    margin: 0 2%;
+    height: 25rem;
+    &:first-child {
+      @include respond-to(laptop) {
+        padding-right: $h5;
+      }
+      padding-bottom: $h5;
+    }
     a {
       @include transition;
       background: $mask-black;
@@ -747,21 +756,13 @@ section {
 
 /* TEAM
 ----------------------------------------------- */
-
-
-.team-head {
-  height: 100vh;
-  background-size:cover;
+.team {
   p {
-    color: $white;
     font-size: $base;
     font-weight: 300;
   }
   button {
     @extend %button;
-  }
-  .centerpiece {
-    margin-top: 20vh;
   }
 }
 
@@ -828,11 +829,9 @@ section {
 
 /* CONTACT
 ----------------------------------------------- */
-.contact-head {
-  height: 100vh;
+.contact {
   .centerpiece {
     @extend %centerpiece;
-    margin-top: 20vh;
   }
 }
 

@@ -14,9 +14,9 @@
 
     $team_members = new WP_Query( $team_args );
 ?>
-<article class="team-head" data-type="background" data-background="<?php echo($image[0]); ?>">
+<article class="team bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
 
-  <section class="centerpiece">
+  <section class="centerpiece intro-header">
       <h1>Team</h1>
       <p><?php echo($post->post_content); ?></p>
   </section>
