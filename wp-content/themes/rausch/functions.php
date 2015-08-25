@@ -52,6 +52,24 @@ function screen_post_type(){
 
 }
 
+add_action('init','client_post_type');
+
+function client_post_type(){
+
+    register_post_type('client',array(
+        'labels' => array(
+            'name' => __('Clients'),
+            'singular_name' => __('Client')
+            ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'has_archive' => true
+        ));
+
+}
+
 
 function sitewide_js() {
   wp_deregister_script('jquery');

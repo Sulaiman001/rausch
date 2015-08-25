@@ -50,24 +50,29 @@
     </section>
 </article>
 
-<article class="work-clients">
+<!--<article class="work-clients">
     <section class="centerpiece">
         <h1 class="secondary-heading">Clients</h1>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. Shoulder ham meatball beef filet mignon sirloin. Ball tip pancetta boudin chicken. Sirloin beef jerky salami chuck capicola, drumstick flank sausage ball tip fatback filet mignon turkey pastrami brisket. Pastrami shoulder shank ground round biltong. Drumstick kevin bresaola cow tri-tip venison. Turducken meatball chuck kevin corned beef filet mignon chicken landjaeger ground round pancetta andouille ham hock cow.</p>
+        <p><?php echo(get_post_meta($post->ID, 'about_clients')[0]); ?></p>
     </section>
     <ul>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
+    <?php
+    // $client_list_args = array(
+    //     'post_type' =>      'client',
+    //     'numberposts'=>     -1,
+    //     'posts_per_page'=>  -1,
+    //     'post_status'=>     'publish',
+    // );
+    // $client_list = new WP_Query( $client_list_args );
+
+    // if ( $client_list->have_posts() ) while ( $client_list->have_posts() ) : $client_list->the_post();
+    ?>
+        <li class="col-4-12">
+          <img src="<?php // the_field('client_logo_image'); ?>"/>
+        </li>
+    <?php
+    // endwhile;
+    ?>
     </ul>
-</article>
+</article> -->
 <?php get_footer(); ?>
