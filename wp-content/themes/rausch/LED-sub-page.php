@@ -3,12 +3,14 @@
     get_header();
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-<article class="led-head" data-type="background" data-background="<?php echo($image[0]); ?>">
-    <section class="centerpiece">
+<article class="led bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
+   
+    <section class="centerpiece intro-header">
         <h1><?php echo($post->post_title); ?></h1>
         <p><?php echo($post->post_content); ?></p>
     </section>
 </article>
+
 <article class="trifecta">
     <section class="featured col-4-12">
         <h2><?php echo(get_post_meta($post->ID, 'benefit_a_title')[0]); ?></h2>
@@ -65,7 +67,7 @@
         <p>By staying on top of the newest technology and equipment, our talented crew maintains the experience and knowledge needed to run successful events and productions.</p>
     </section>
     <section class="featured col-4-12" >
-        <h2>Comittment</h2>
+        <h2>Commitment</h2>
         <p>Our first priority is helping you create the best live event experience from start to finish. Our commitment to see your event run successfully from start to finish is what makes Rausch Productions the best in the business.</p>
     </section>
 </article>

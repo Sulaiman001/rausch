@@ -1,31 +1,36 @@
 <?php
-    get_header();
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+  get_header();
+  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+  $contact_page_args = array(
+      'post_type' =>      'page',
+      'numberposts'=>     -1,
+      'posts_per_page'=>  -1,
+      'post_status'=>     'publish',
+      'pagename'=>        'contact'
+  );
+  $contact_page = new WP_Query( $contact_page_args );
+  if ( $contact_page->have_posts() ) while ( $contact_page->have_posts() ) : $contact_page->the_post();
 ?>
-<article class="contact-head" data-type="background" data-background="<?php echo($image[0]); ?>">
 
-  <section class="centerpiece">
+<article class="contact bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
+
+  <section class="centerpiece intro-header">
       <h1>Contact Us</h1>
-      <p><?php echo get_post_meta($post->ID, 'contact_desc')[0]; ?></p>
+      <?php the_field('contact_desc'); ?>
   </section>
 
 </article>
+
 <article>
     <section class="col-6-12 contact-col">
-        <h1><?php echo get_post_meta($post->ID, 'column_heading')[0]; ?></h1>
-        <p><?php echo get_post_meta($post->ID, 'column_paragraph')[0]; ?></p>
+        <h1><?php the_field('column_heading'); ?></h1>
+        <?php the_field('column_paragraph'); ?>
     </section>
-    <?php if ( have_posts() ) : ?>
-
-        <?php while ( have_posts() ) : the_post(); ?>
-
-          <section class="col-6-12">
-            <?php the_content(); ?>
-          </section>
-
-        <?php endwhile; ?>
-
-    <?php endif; ?>
-
+    <section class="col-6-12 contact-form">
+        <?php the_content(); ?>
+    </section>
 </article>
-<?php get_footer(); ?>
+<?php 
+  endwhile;
+  get_footer(); 
+?>

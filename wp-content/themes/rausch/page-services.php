@@ -2,12 +2,12 @@
     get_header();
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-<article class="service-head" data-type="background" data-background="<?php echo($image[0]); ?>">
+<article class="services bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
 
-  <section class="centerpiece">
-      <h1>Our Services</h1>
+  <section class="centerpiece intro-header">
+      <h1>Services</h1>
       <p><?php echo($post->post_content); ?></p>
-  </section>
+        
   <ul class="icon-display">
       <li class='col-2-12'>
           <a class="event-management" href="/rausch/services/event-management">
@@ -57,14 +57,14 @@
         <h2>Entertain</h2>
         <p><?php echo(get_post_meta($post->ID, 'entertain')[0]); ?></p>
     </section>
-
-    <a href="/rausch/contact"><button><?php echo(get_post_meta($post->ID, 'approach_button')[0]); ?></button></a>
-
+    <div class="col-12-12" >
+        <a href="/rausch/contact"><button><?php echo(get_post_meta($post->ID, 'approach_button')[0]); ?></button></a>
+    </div>
 </article>
 
 <article class="testimonial" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
-        <h3 class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></h3>
+        <blockquote class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></blockquote>
         <p>-<?php echo(get_post_meta($post->ID, 'testifier')[0]); ?></p>
         <p><?php echo(get_post_meta($post->ID, 'job_title')[0]); ?></p>
     </section>
@@ -83,7 +83,7 @@
         <p>By staying on top of the newest technology and equipment, our talented crew maintains the experience and knowledge needed to run successful events and productions.</p>
     </section>
     <section class="featured col-4-12" >
-        <h2>Comittment</h2>
+        <h2>Commitment</h2>
         <p>Our first priority is helping you create the best live event experience from start to finish. Our commitment to see your event run successfully from start to finish is what makes Rausch Productions the best in the business.</p>
     </section>
 </article>

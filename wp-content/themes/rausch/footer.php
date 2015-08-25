@@ -28,7 +28,7 @@
         <a class="fa fa-facebook fa-3x" href="http://www.facebook.com/RauschProductions" target="_blank"></a>
         <a class="fa fa-twitter fa-3x" href="https://twitter.com/RauschPros" target="_blank"></a>
         <a class="fa fa-instagram fa-3x" href="https://instagram.com/rauschpros/" target="_blank"></a>
-        <a class="fa fa-vimeo-square fa-3x" href="http://vimeopro.com/rauschproductions/showcase" target="_blank"></a>
+        <a class="fa fa-vimeo-square fa-3x" href="https://vimeo.com/rauschproductions" target="_blank"></a>
     </div>
     <h1 class="copyright">&copy; 2015 Rausch Productions, Inc. All Rights Reserved.</h1>
   </section>
