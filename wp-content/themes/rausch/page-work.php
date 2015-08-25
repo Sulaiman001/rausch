@@ -2,7 +2,7 @@
   get_header();
   $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
  ?>
-<article class="work-head" data-speed="15" data-type="background" data-background="<?php echo($image[0]); ?>">
+<article class="work-head" data-type="background" data-background="<?php echo($image[0]); ?>">
 
   <section class="centerpiece">
       <h1>Our Work</h1>
@@ -42,7 +42,7 @@
     ?>
 
 </article>
-<article class="testimonial" data-speed="15" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
+<article class="testimonial" data-type="background" data-background="<?php echo(wp_get_attachment_url(get_post_meta($post->ID, 'background_image')[0])); ?>">
     <section class="centerpiece">
         <h3 class="blockquote"><?php echo(get_post_meta($post->ID, 'testimonial')[0]); ?></h3>
         <p>-<?php echo(get_post_meta($post->ID, 'testifier')[0]); ?></p>

@@ -3,7 +3,7 @@
     get_header();
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
-<article class="led-head" data-speed="15" data-type="background" data-background="<?php echo($image[0]); ?>">
+<article class="led-head" data-type="background" data-background="<?php echo($image[0]); ?>">
     <section class="centerpiece">
         <h1><?php echo($post->post_title); ?></h1>
         <p><?php echo($post->post_content); ?></p>
