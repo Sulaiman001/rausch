@@ -50,29 +50,32 @@
     </section>
 </article>
 
-<!--<article class="work-clients">
+<article class="work-clients">
     <section class="centerpiece">
         <h1 class="secondary-heading">Clients</h1>
-        <p><?php //echo(get_post_meta($post->ID, 'about_clients')[0]); ?></p>
+        <p><?php echo(get_post_meta($post->ID, 'about_clients')[0]); ?></p>
     </section>
     <ul>
     <?php
-    // $client_list_args = array(
-    //     'post_type' =>      'client',
-    //     'numberposts'=>     -1,
-    //     'posts_per_page'=>  -1,
-    //     'post_status'=>     'publish',
-    // );
-    // $client_list = new WP_Query( $client_list_args );
+    $client_list_args = array(
+        'post_type' =>      'client',
+        'numberposts'=>     -1,
+        'posts_per_page'=>  -1,
+        'post_status'=>     'publish',
+        'orderby'=>         'title',
+        'order'=>           'ASC',
+    );
+    $client_list = new WP_Query( $client_list_args );
 
-    // if ( $client_list->have_posts() ) while ( $client_list->have_posts() ) : $client_list->the_post();
+    if ( $client_list->have_posts() ) while ( $client_list->have_posts() ) : $client_list->the_post();
     ?>
-        <li class="col-4-12">
-          <img src="<?php // the_field('client_logo_image'); ?>"/>
+        <li class="col-2-12">
+          <img src="<?php the_field('client_logo_image'); ?>"/>
         </li>
     <?php
-    // endwhile;
+    endwhile;
     ?>
     </ul>
-</article> -->
+</article>
+
 <?php get_footer(); ?>

@@ -14,12 +14,12 @@
     $case_studies = new WP_Query( $case_args );
 ?>
 <article class="work bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
-   
+
     <section class="centerpiece intro-header">
         <h1><?php the_title(); ?></h1>
         <p><?php echo($post->post_content); ?></p>
     </section>
-    
+
 </article>
 
 <article class="case-studies">
@@ -32,10 +32,14 @@
             <?php the_content(); ?>
         </div>
         <div class="vid-contain col-6-12">
-            <i class="fa fa-volume-off fa-2x"></i>
-            <video muted>
-                <source src="<?php the_field('video') ?>" type="video/mp4">
-            </video>
+            <?php if(get_field('video') != "") { ?>
+                <i class="fa fa-volume-off fa-2x"></i>
+                <video muted>
+                    <source src="<?php the_field('video') ?>" type="video/mp4">
+                </video>
+            <?php } else { ?>
+                <img src="<?php the_field('image_alternative'); ?>" />
+            <?php } ?>
         </div>
     </section>
     <?php

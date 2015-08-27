@@ -4,12 +4,12 @@
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 ?>
 <article class="services bg-image-wrap" data-type="background" data-background="<?php echo($image[0]); ?>">
-   
+
     <section class="centerpiece intro-header">
         <h1><?php the_title(); ?></h1>
         <p><?php echo($post->post_content); ?></p>
     </section>
-    
+
 </article>
 
 <article class="trifecta">
@@ -34,25 +34,45 @@
 <article class="list">
     <section class="centerpiece">
         <h1><?php the_title(); ?></h1>
-        <p>Bacon ipsum dolor amet brisket salami alcatra, chicken pork belly ham hock jowl frankfurter kevin tri-tip flank tongue filet mignon strip steak pancetta. </p>
+        <p><?php the_field('description'); ?> </p>
     </section>
-    <h3 class="col-4-12">Specialty 1</h3>
-    <h3 class="col-4-12">Specialty 1</h3>
-    <h3 class="col-4-12">Specialty 1</h3>
-    <ul>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-        <li class="col-4-12">Client</li>
-    </ul>
+    <div class="col-3-12">
+        <h3><?php the_field('specialty_1'); ?></h3>
+        <!--<ul>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+        </ul>-->
+    </div>
+    <div class="col-3-12">
+        <h3><?php the_field('specialty_2'); ?></h3>
+        <!--<ul>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+        </ul>-->
+    </div>
+    <div class="col-3-12">
+        <h3><?php the_field('specialty_3'); ?></h3>
+        <!--<ul>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+        </ul>-->
+    </div>
+    <div class="col-3-12">
+        <h3><?php the_field('specialty_4'); ?></h3>
+        <!--<ul>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+            <li>Client</li>
+        </ul>-->
+    </div>
+
     <button>Get Started</button>
 </article>
 
