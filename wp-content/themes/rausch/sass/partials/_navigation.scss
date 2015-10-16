@@ -99,7 +99,7 @@ body.pml-open main {
     @include respond-to(tablet) {
       margin-top: 0;
     }
-    margin-top: $h4;
+    margin-top: $base;
     width: auto; height: auto;
     li {
       @include transition(all, 0.2s, ease-in-out);
@@ -112,7 +112,6 @@ body.pml-open main {
       a {
         @include transition(all, 0.2s, ease-in-out);
         @include respond-to(tablet) {
-          font-size: $base;
           height: 100%;
           line-height: $header-height;
           padding: 0 1.5vw;
@@ -120,10 +119,10 @@ body.pml-open main {
         color: $white;
         display: block;
         font-family: $title-font;
-        font-size: $h5;
+        font-size: $base;
         font-weight: 800;
         line-height: 1.1;
-        padding: $h5;
+        padding: $base;
         position: relative;
         text-align: center;
         text-transform: uppercase;
@@ -142,7 +141,7 @@ body.pml-open main {
     padding-left: $h1*2;
     position: absolute;
     top: 80px; left: 0;
-    height: 40px;
+    height: auto;
   }
   background-color: $dark-blue;
   display: block;
@@ -155,6 +154,7 @@ body.pml-open main {
       @include transition(all, 0.2s, ease-in-out);
       @include respond-to(tablet) {
         display: inline-block;
+        font-size: .75rem;
       }
       display: block;
       position: relative;
@@ -173,7 +173,7 @@ body.pml-open main {
         font-size: $small;
         font-weight: 500;
         line-height: 1.1;
-        padding: $h5;
+        padding: $base;
         position: relative;
         text-align: center;
         text-transform: uppercase;

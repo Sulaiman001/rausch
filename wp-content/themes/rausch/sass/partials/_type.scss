@@ -4,7 +4,7 @@ $h2: 3.157rem;
 $h3: 2.369rem;
 $h4: 1.777rem;
 $h5: 1.333rem;
-$base: 1rem;
+$base: 0.8rem;
 $small: 0.75rem;
 
 /* =HEADINGS */
@@ -27,6 +27,7 @@ $small: 0.75rem;
     font-size: $h3;
   }
   font-size: $h5;
+  margin-bottom: $h3;
 }
 
 h1, h2, h3, h4 { @extend %headings; }

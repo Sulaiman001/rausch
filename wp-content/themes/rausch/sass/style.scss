@@ -46,14 +46,14 @@ main {
 
 article {
   @include respond-to(laptop) {
-    padding: $h2;
+    padding: $h3;
   }
   @include respond-to(desktop) {
     padding: $h1;
   }
   margin: 0 auto;
   overflow: hidden;
-  padding: $h3;
+  padding: $h4;
   position: relative;
   text-align: left;
   width: 100%; height: 100%;
@@ -133,15 +133,23 @@ section {
   }
   height: 100vh;
   background-size: cover;
+  background-position: center;
 }
 
 .intro-header {
   @include translate(0, -50%);
+  @include respond-to(mobile) {
+    top: 50%;
+    padding: 1rem;
+  }
   @include respond-to(tablet) {
-    padding: $h2 8rem;
+    padding: $h2 4rem;
+    top: 35%;
+  }
+  @include respond-to(laptop) {
+    top: 50%;
   }
   position: absolute;
-  top: 50%;
   width: 100%;
 }
 
@@ -159,6 +167,9 @@ section {
 
 .centerpiece {
   @extend %centerpiece;
+  h1 {
+    margin-bottom: $h2;
+  }
 }
 
 %halfpiece {
@@ -223,9 +234,12 @@ section {
 }
 
 %trifecta {
+  @include respond-to(tablet) {
+    padding: 0 $h3;
+  }
   color: white;
+  margin-bottom: $h4;
   text-align: left;
-  padding: 3rem;
   h2 {
     font-weight: 100;
   }
@@ -282,8 +296,10 @@ section {
     background-color: transparentize($black, 0.1);
     bottom: auto; left: 0; right: 0;
     height: $header-height;
+    overflow-y: visible;
   }
   background-color: $black;
+  overflow-y: auto;
   position: fixed;
   top: 0; right: -100%; bottom: 0;
   width: 100%; height: 100%;
@@ -320,7 +336,7 @@ section {
   display: block;
   line-height: $header-height;
   margin-left: $h4;
-  padding: 2.133rem 2.79rem;
+  padding: $h4 $h3;
   position: relative;
   top: 1em;
   text-indent: -100%;
@@ -360,38 +376,69 @@ section {
 #bgvid {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  min-width: 100%; min-height: 100%;
+  min-width: 100%; min-height: 100vh;
   width: auto; height: auto;
   z-index: -100;
 }
 
+// #bgvid {
+// position: fixed;
+// right: 0;
+// bottom: 0;
+// width: auto;
+// min-width: 100%;
+// height: auto;
+// min-height: 100%;
+// z-index: -100;
+// background: transparent url(video-bg.jpg) no-repeat;
+// background-size: cover;
+// }
+
 .video-intro {
-  padding: $h2;
+  padding: 0; //$h2;
   position: relative;
   height: 100vh;
+  background-position: center;
+  @include respond-to(laptop) {
+    background-image: none !important;
+  }
+  video {
+    @include respond-to(mobile) {
+      display: none;
+    }
+    @include respond-to(laptop) {
+      display: inline-block;
+    }
+  }
   .intro-copy {
-    @include respond-to(tablet) {
-      left: 5rem;
-      width: 50%;
+    @include respond-to(mobile) {
+      background: hsla(345, 6%, 13%, 0.35);
     }
     @include respond-to(tablet) {
+      background: hsla(345, 6%, 13%, 0.45);
+      left: 5rem;
+      width: 75%;
+      top: 10rem;
+      bottom: auto;
       padding: $h2;
     }
-    background: hsla(345, 6%, 13%, 0.75);
     padding: $h3;
     position: absolute;
-    bottom: $h4; left: 0;
+    bottom: 0; left: 0;
     text-align: left;
     width: 100%;
     h1 {
+      @include respond-to(tablet) {
+        font-size: $h4;
+      }
       color: $white;
+      font-size: 1.333rem;
       margin-bottom: 0;
       &::after {
         content: none;
       }
     }
     p {
-      color: $white;
       padding: $base 0;
     }
     button {
@@ -407,17 +454,25 @@ section {
 .service-portal {
   position: relative;
   background-size: cover;
-  section p {
-    padding: 1rem;
-    color: white;
+  h2 {
+    margin-bottom: $base;
   }
-  section a {
-    width: 100%;
-    margin: 0px auto;
-    text-align: center;
-    display: block;
-    button {
-      width: calc(100% - 1rem);
+  section {
+    @include respond-to(tablet) {
+      padding: $h4;
+    }
+    margin-bottom: $base;
+    p {
+      margin-bottom: $base;
+    }
+    a {
+      width: 100%;
+      margin: 0px auto;
+      text-align: center;
+      display: block;
+      button {
+        width: 100%;
+      }
     }
   }
   button {
@@ -510,15 +565,12 @@ section {
   @extend %grid-list;
   height: auto;
   ul {
-    @include respond-to(tablet) {
-      margin-left: 2rem;
-      width: 100%;
-    }
     li {
       color: white;
-      @include respond-to(tablet) {
-        margin: 1rem -1rem;
-      }
+      float: none;
+      position: relative;
+      display: inline-block;
+      padding: 1rem 0;
       img {
         width: 100px;
         height: auto;
@@ -578,14 +630,14 @@ section {
   .centerpiece {
     background: hsla(345, 6%, 13%, 0.75);
   }
-  p {
-    font-size: $base;
-    font-weight: 300;
-  }
   button {
     @extend %button;
   }
   .icon-display {
+    @include respond-to(mobile) {
+      display: none;
+    }
+    display: block;
     width: 80%;
     margin: 0 auto;
     position: relative;
@@ -618,7 +670,7 @@ section {
           position: absolute;
           width: 100%;
           margin: 0px;
-          bottom: -1rem;
+          bottom: -2.5rem;
         }
       }
       .live-event-production {
@@ -630,7 +682,7 @@ section {
           position: absolute;
           width: 100%;
           margin: 0px;
-          bottom: -1rem;
+          bottom: -2.5rem;
         }
       }
       .video-production {
@@ -642,7 +694,7 @@ section {
           position: absolute;
           width: 100%;
           margin: 0px;
-          bottom: -1rem;
+          bottom: -2.5rem;
         }
       }
       .special-events {
@@ -654,7 +706,7 @@ section {
           position: absolute;
           width: 100%;
           margin: 0px;
-          bottom: -1rem;
+          bottom: -2.5rem;
         }
       }
       .rentals {
@@ -666,7 +718,7 @@ section {
           position: absolute;
           width: 100%;
           margin: 0px;
-          bottom: -1rem;
+          bottom: -2.5rem;
         }
       }
     }
@@ -680,6 +732,9 @@ section {
     @extend %centerpiece;
   }
   .featured {
+    @include respond-to(tablet) {
+      padding: 3rem $h3;
+    }
     padding: 3rem 0;
     @extend %trifecta;
     h2 {
@@ -693,14 +748,21 @@ section {
       display: block;
       font-size: 24pt;
       text-align: center;
-      &::after {
-        content: ">";
-        position: absolute;
-        left: 15rem;
-        font-size: 44pt;
-        line-height: 24pt;
-        color: $lime-green;
-      }
+      // @include respond-to(mobile) {
+      //   &::after {
+      //     display: none;
+      //   }
+      // }
+      // @include respond-to(laptop) {
+      //   &::after {
+      //     content: ">";
+      //     position: absolute;
+      //     left: 15rem;
+      //     font-size: 44pt;
+      //     line-height: 24pt;
+      //     color: $lime-green;
+      //   }
+      // }
     }
     &:last-of-type {
       h2 {
@@ -715,6 +777,23 @@ section {
   }
 }
 
+.rental-box {
+  width: 100%;
+  position: relative;
+  display: block;
+  height: 100px;
+  h3 {
+    text-align: right;
+    padding: 0 2rem;
+  }
+  div {
+    text-align: left;
+    color: white;
+    font-size: 14pt;
+    padding: 0 2rem;
+  }
+}
+
 /* LED TECH
 ----------------------------------------------- */
 .icon {
@@ -725,7 +804,9 @@ section {
 }
 
 .led {
-  padding: $h2 8rem;
+  @include respond-to(laptop) {
+    padding: $h2 8rem;
+  }
   .centerpiece {
     background: hsla(345, 6%, 13%, 0.75);
   }
@@ -748,6 +829,9 @@ section {
   .featured {
     @extend %grid-elem;
     height: 25rem;
+    @include respond-to(mobile) {
+      margin-top: 1rem;
+    }
     @include respond-to(laptop) {
       padding: 0;
       width: calc(50% - 2rem);
@@ -784,6 +868,9 @@ section {
   section {
     padding: 0 1rem;
   }
+  h2 {
+    margin-top: 2rem;
+  }
   p {
     margin-top:0;
   }
@@ -813,6 +900,7 @@ section {
     @extend %grid-elem;
     text-align: center;
     height: auto;
+    min-height: 27rem;
     padding: 1rem;
     h2 {
       position: relative;
@@ -822,6 +910,9 @@ section {
     .profile-contain {
       width: 100%;
       height: auto;
+      img {
+        opacity: 0;
+      }
     }
     a {
       position: relative;
@@ -893,7 +984,7 @@ section {
     padding: 3rem 0 0;
   }
   @include respond-to(tablet) {
-    padding: 3rem 0 0;
+    padding: 3rem 2rem 0;
   }
   @include respond-to(laptop) {
     padding: 0 7rem;
@@ -956,6 +1047,7 @@ footer {
     }
     div, .copyright {
       display: inline-block;
+      width: 100%;
     }
     div a {
       padding: 1rem .2rem;
@@ -974,6 +1066,9 @@ footer {
       @include respond-to(desktop){
         display: block;
       }
+    }
+    .newsletter {
+      color: $sky-blue;
     }
   }
 }
